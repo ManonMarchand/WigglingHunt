@@ -36,6 +36,11 @@ namespace ScientificGameJam.Player
             _spawns = _spawnPoint.Select(x => new PlayerSpawn(x)).ToArray();
         }
 
+        public PlayerInput GetNextPlayer(PlayerInput player)
+        {
+            return _spawns.Select(x => x.Player).FirstOrDefault(x => x != null && x != player);
+        }
+
         public void OnPlayerJoin(PlayerInput player)
         {
             var freeSpot = Array.IndexOf(_spawns, _spawns.FirstOrDefault(x => x.Player == null));
