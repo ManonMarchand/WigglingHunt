@@ -23,7 +23,7 @@ namespace ScientificGameJam.Player
         public void OnPlayerJoin(PlayerInput player)
         {
             var freeSpot = Array.IndexOf(_spawns, _spawns.FirstOrDefault(x => x.Player == null));
-            Assert.AreNotEqual(-1, freeSpot);
+            Assert.AreNotEqual(-1, freeSpot, "No available spawn point found, are you sure they are set properly on the object?");
             _spawns[freeSpot].Player = player;
             player.transform.position = _spawns[freeSpot].Spawn.position;
         }
