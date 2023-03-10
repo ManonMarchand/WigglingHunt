@@ -20,7 +20,10 @@ namespace ScientificGameJam.Player
 
         private void FixedUpdate()
         {
-            _rb.velocity = _mov * _info.Speed * Time.fixedDeltaTime;
+            if (PlayerManager.Instance.IsReady)
+            {
+                _rb.velocity = _mov * _info.Speed * Time.fixedDeltaTime;
+            }
         }
 
         public void Move(InputAction.CallbackContext value)
