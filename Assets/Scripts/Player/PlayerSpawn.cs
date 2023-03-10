@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace ScientificGameJam.Player
@@ -12,6 +14,16 @@ namespace ScientificGameJam.Player
 
         public bool DoesContainsPlayer(PlayerInput p)
             => Player != null && Player.GetInstanceID() == p.GetInstanceID();
+
+        public override bool Equals(object obj)
+        {
+            return obj is PlayerSpawn ps && ps == this;
+        }
+
+        public override int GetHashCode()
+        {
+            return Player.GetInstanceID();
+        }
 
         public static bool operator ==(PlayerSpawn p1, PlayerSpawn p2)
         {
