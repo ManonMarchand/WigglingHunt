@@ -27,6 +27,14 @@ namespace ScientificGameJam.Player
             }
         }
 
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.collider.CompareTag("Player"))
+            {
+                // TODO: Victory screen
+            }
+        }
+
         public void Move(InputAction.CallbackContext value)
         {
             _mov = value.ReadValue<Vector2>().normalized;
