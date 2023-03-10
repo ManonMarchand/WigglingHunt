@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 1459084127}
   - component: {fileID: 1459084129}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: WaitingPlayersText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -625,6 +625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoint:
   - {fileID: 779059430}
+  _waitingPlayerText: {fileID: 1459084127}
 --- !u!1001 &8799445971735417989
 PrefabInstance:
   m_ObjectHideFlags: 0

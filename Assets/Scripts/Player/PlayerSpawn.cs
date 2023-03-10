@@ -35,6 +35,14 @@ namespace ScientificGameJam.Player
             {
                 return false;
             }
+            if (p1.Player == null)
+            {
+                return p2.Player == null;
+            }
+            if (p2.Player == null)
+            {
+                return false;
+            }
             return p1.Player.GetInstanceID() == p2.Player.GetInstanceID();
         }
 

@@ -1,7 +1,6 @@
-﻿using ScientificGameJam.SO;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.InputSystem;
@@ -15,9 +14,21 @@ namespace ScientificGameJam.Player
         [SerializeField]
         private Transform[] _spawnPoint;
 
+        [SerializeField]
+        private TMP_Text _waitingPlayerText;
+
         private PlayerSpawn[] _spawns;
 
-        public bool IsReady { get; private set; }
+        private bool _isReady;
+        public bool IsReady
+        {
+            set
+            {
+                _waitingPlayerText.gameObject.SetActive(!value);
+                _isReady = value;
+            }
+            get => _isReady;
+        }
 
         private void Awake()
         {
