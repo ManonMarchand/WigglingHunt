@@ -6,6 +6,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace ScientificGameJam.Player
 {
@@ -113,7 +114,10 @@ namespace ScientificGameJam.Player
 
         public void UpdateDyeText()
         {
-            _dyeLeftText.text = $"{Translate.Instance.Tr("dyeLeft")} {PlayerManager.Instance.GetCollectibleLeft(Info.Color)}";
+            if (SceneManager.GetActiveScene().name != "MainMenu")
+            {
+                _dyeLeftText.text = $"{Translate.Instance.Tr("dyeLeft")} {PlayerManager.Instance.GetCollectibleLeft(Info.Color)}";
+            }
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
