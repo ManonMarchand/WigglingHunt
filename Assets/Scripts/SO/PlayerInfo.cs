@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ScientificGameJam.Player;
+using UnityEngine;
 
 namespace ScientificGameJam.SO
 {
@@ -13,5 +14,7 @@ namespace ScientificGameJam.SO
         public float TimeBeforeBoost;
         public float BoostDuration;
         public float MaxBoostSpeed;
+
+        public ColorType Color;
     }
 }
