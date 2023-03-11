@@ -9,6 +9,7 @@ namespace ScientificGameJam.SO
         public float Speed;
 
         public AnimationCurve BoostCurve;
+        public float DeviationLimit;
 
         public float TimeBeforeBoost;
         public float BoostDuration;

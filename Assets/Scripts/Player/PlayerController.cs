@@ -27,14 +27,18 @@ namespace ScientificGameJam.Player
         private void FixedUpdate()
         {
             if (PlayerManager.Instance.IsReady)
+
             {
-                if (true) // TODO: Here!
+                // Debug.Log($"Dot product value {Vector2.Dot(_prevMov, _mov)}");
+                if (Vector2.Dot(_prevMov, _mov) < _info.DeviationLimit) // condition on loosing booster
                 {
-                    _boostTimer = 0f;
+                    Debug.Log("I did a reset");
+                    _boostTimer = 0f; // in seconds
                 }
 
                 _prevMov = _mov;
                 _rb.velocity = _info.Speed * Time.fixedDeltaTime * _mov * (_info.TimeBeforeBoost > 0f && _boostTimer >= _info.TimeBeforeBoost ? 2f : 1f);
+                // Debug.Log($"Velocity {_rb.velocity.magnitude}");
             }
         }
 
