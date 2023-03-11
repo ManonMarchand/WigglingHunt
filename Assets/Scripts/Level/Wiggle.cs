@@ -42,7 +42,7 @@ namespace ScientificGameJam.Level
                 float randAngle = Random.Range(-_angularDispersion, _angularDispersion);
                 if (Mathf.Abs(_rb.totalTorque) < _maxTorque)
                 {
-                    _rb.AddTorque(randAngle, ForceMode2D.Impulse);
+                    _rb.AddTorque(randAngle, ForceMode2D.Force);
                 }
                 
                 _rb.AddForce(randVectorDistance, ForceMode2D.Impulse);
