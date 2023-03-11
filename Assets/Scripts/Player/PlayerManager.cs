@@ -113,7 +113,7 @@ namespace ScientificGameJam.Player
                 player.GetComponent<Rigidbody2D>().mass = _spawns[freeSpot].Info.Mass;
                 player.GetComponent<SpriteRenderer>().color = ToColor(_spawns[freeSpot].Info.Color);
                 _waitingCamera.gameObject.SetActive(false);
-                _separator.SetActive(true);
+                _separator.SetActive(_spawns.Count(x => x.Player != null) > 1);
                 if (_spawns.All(x => x.Player != null))
                 {
                     IsReady = true;
@@ -127,7 +127,7 @@ namespace ScientificGameJam.Player
             Assert.AreNotEqual(-1, freeSpot);
             _spawns[freeSpot].Player = null;
             IsReady = false;
-            _separator.SetActive(false);
+            _separator.SetActive(_spawns.Count(x => x.Player != null) > 1);
             if (_spawns.All(x => x.Player == null))
             {
                 _waitingCamera.gameObject.SetActive(true);
