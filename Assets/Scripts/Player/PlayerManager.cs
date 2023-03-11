@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ScientificGameJam.SO;
+using ScientificGameJam.Translation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -10,12 +12,48 @@ namespace ScientificGameJam.Player
 {
     public class PlayerManager : MonoBehaviour
     {
+        [SerializeField]
+        private PlayerInfo[] _infos;
+
+        public static Color ToColor(ColorType type)
+        {
+            return type switch
+            {
+                ColorType.RED => Color.red,
+                ColorType.GREEN => Color.green,
+                _ => throw new NotImplementedException()
+            };
+        }
+
         public static PlayerManager Instance { get; private set; }
 
         [SerializeField]
         private TMP_Text _waitingPlayerText;
 
+        [SerializeField]
+        private Camera _waitingCamera;
+
         private readonly List<PlayerSpawn> _spawns = new();
+
+        private Dictionary<ColorType, int> _remainingCollectibles = new();
+
+        public void RegisterCollectible(ColorType color)
+        {
+            if (!_remainingCollectibles.ContainsKey(color))
+            {
+                _remainingCollectibles.Add(color, 1);
+            }
+            else
+            {
+                _remainingCollectibles[color]++;
+            }
+        }
+
+        public void Collect(ColorType color)
+        {
+            _remainingCollectibles[color]--;
+            CheckGlobalVictory();
+        }
 
         private bool _isReady;
         public bool IsReady
@@ -33,15 +71,27 @@ namespace ScientificGameJam.Player
             Instance = this;
         }
 
-        private static Color[] _colors = new[] { Color.red, Color.green };
         public void RegisterSpawn(Transform spawn)
         {
-            _spawns.Add(new(spawn, _colors[_spawns.Count % 2]));
+            _spawns.Add(new(spawn, _infos[_spawns.Count % 2]));
+        }
+
+        public PlayerSpawn GetSpawn(PlayerInput player)
+        {
+            return _spawns.FirstOrDefault(x => x.DoesContainsPlayer(player));
         }
 
         public PlayerInput GetNextPlayer(PlayerInput player)
         {
             return _spawns.Select(x => x.Player).FirstOrDefault(x => x != null && x != player);
+        }
+
+        public void CheckGlobalVictory()
+        {
+            if (_spawns.All(x => x.IsWinning) && _remainingCollectibles.Values.All(x => x == 0))
+            {
+                Debug.Log(Translate.Instance.Tr("winningText"));
+            }
         }
 
         public void OnPlayerJoin(PlayerInput player)
@@ -56,7 +106,10 @@ namespace ScientificGameJam.Player
             {
                 _spawns[freeSpot].Player = player;
                 player.transform.position = _spawns[freeSpot].Spawn.position;
-                player.GetComponent<SpriteRenderer>().color = _spawns[freeSpot].Color;
+                player.GetComponent<PlayerController>().Info = _spawns[freeSpot].Info;
+                player.GetComponent<Rigidbody2D>().mass = _spawns[freeSpot].Info.Mass;
+                player.GetComponent<SpriteRenderer>().color = ToColor(_spawns[freeSpot].Info.Color);
+                _waitingCamera.gameObject.SetActive(false);
                 if (_spawns.All(x => x.Player != null))
                 {
                     IsReady = true;
@@ -70,6 +123,10 @@ namespace ScientificGameJam.Player
             Assert.AreNotEqual(-1, freeSpot);
             _spawns[freeSpot].Player = null;
             IsReady = false;
+            if (_spawns.All(x => x.Player == null))
+            {
+                _waitingCamera.gameObject.SetActive(true);
+            }
         }
     }
 }
