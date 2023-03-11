@@ -1,4 +1,5 @@
-﻿using ScientificGameJam.SO;
+﻿using ScientificGameJam.SFX;
+using ScientificGameJam.SO;
 using ScientificGameJam.Translation;
 using System;
 using System.Collections.Generic;
@@ -122,6 +123,7 @@ namespace ScientificGameJam.Player
             Debug.Log($"{_spawns.All(x => x.IsWinning)} && {_remainingCollectibles.Values.All(x => x == 0)}");
             if (_spawns.All(x => x.IsWinning) && _remainingCollectibles.Values.All(x => x == 0))
             {
+                SFXManager.Instance.WinningSFX.Play();
                 DidGameEnded = true;
                 _victory.SetActive(true);
             }
@@ -129,6 +131,7 @@ namespace ScientificGameJam.Player
 
         public void GameOver()
         {
+            SFXManager.Instance.LoosingSFX.Play();
             DidGameEnded = true;
             _gameover.SetActive(true);
         }

@@ -11,6 +11,6 @@ namespace ScientificGameJam.SFX
             Instance = this;
         }
 
-        public AudioSource LaserSFX;
+        public AudioSource LaserSFX, WinningSFX, LoosingSFX;
     }
 }
