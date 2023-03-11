@@ -23,7 +23,7 @@ namespace ScientificGameJam.Player
 
         private float _laserTimer;
 
-        private bool _canShoot;
+        private bool _canShoot = true;
 
         // Movement vector
         private Vector2 _mov;
