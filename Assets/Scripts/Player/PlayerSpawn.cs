@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace ScientificGameJam.Player
 {
     public class PlayerSpawn
     {
-        public PlayerSpawn(Transform spawn, Color color)
+        public PlayerSpawn(Transform spawn, ColorType color)
         {
             Spawn = spawn;
             Color = color;
@@ -52,6 +50,16 @@ namespace ScientificGameJam.Player
 
         public PlayerInput Player { set; get; }
         public Transform Spawn { private set; get; }
-        public Color Color { private set; get; }
+        public ColorType Color { private set; get; }
+        private bool _isWinning;
+        public bool IsWinning
+        {
+            set
+            {
+                _isWinning = value;
+                PlayerManager.Instance.CheckGlobalVictory();
+            }
+            get => _isWinning;
+        }
     }
 }
