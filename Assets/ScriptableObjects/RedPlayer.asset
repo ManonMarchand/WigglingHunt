@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RedPlayer
   m_EditorClassIdentifier: 
   Speed: 300
-  Mass: 10
+  Mass: 1
   BoostCurve:
     serializedVersion: 2
     m_Curve:
@@ -44,4 +44,3 @@ MonoBehaviour:
   MaxBoostSpeed: 24
   Color: 0
   CanShoot: 0
-  Projectile: {fileID: 1706301161558798430, guid: 32193d80df26552499615ef0959523a4, type: 3}

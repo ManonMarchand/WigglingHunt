@@ -1,4 +1,5 @@
 using ScientificGameJam.SO;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,9 @@ namespace ScientificGameJam.Player
         private Rigidbody2D _rb;
         private PlayerInput _input;
         private Camera _cam;
+        private LineRenderer _lr;
+
+        private float _laserTimer;
 
         // Movement vector
         private Vector2 _mov;
@@ -24,11 +28,19 @@ namespace ScientificGameJam.Player
 
         public ColorType Color => Info.Color;
 
+        public int _ignoreMask;
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
             _input = GetComponent<PlayerInput>();
             _cam = GetComponentInChildren<Camera>();
+            _lr = GetComponentInChildren<LineRenderer>();
+            _lr.gameObject.SetActive(false);
+
+            _ignoreMask = (1 << LayerMask.NameToLayer("Player"));
+            _ignoreMask |= (1 << LayerMask.NameToLayer("Collectible"));
+            _ignoreMask = ~_ignoreMask;
         }
 
         private void FixedUpdate()
@@ -52,6 +64,14 @@ namespace ScientificGameJam.Player
         private void Update()
         {
             _boostTimer += Time.deltaTime;
+            if (_laserTimer > 0f)
+            {
+                _laserTimer -= Time.deltaTime;
+                if (_laserTimer <= 0f)
+                {
+                    _lr.gameObject.SetActive(false);
+                }
+            }
         }
 
         public void Move(InputAction.CallbackContext value)
@@ -91,12 +111,18 @@ namespace ScientificGameJam.Player
 
         public void OnFire(InputAction.CallbackContext value)
         {
-            if (value.performed)
+            if (value.performed && Info.CanShoot)
             {
-                var hit = Physics2D.Raycast(transform.position, _aimDir, float.PositiveInfinity, ~(1 << 6));
+                var hit = Physics2D.Raycast(transform.position, _aimDir, float.PositiveInfinity, _ignoreMask);
                 if (hit.collider != null)
                 {
-                    Debug.Log(hit.collider.name);
+                    _lr.gameObject.SetActive(true);
+                    _lr.SetPositions(new[] { transform.position, (Vector3)hit.point });
+                    _laserTimer = .3f;
+                    if (hit.collider.TryGetComponent<Rigidbody2D>(out var comp))
+                    {
+                        comp.AddForce(_aimDir.normalized * 10f, ForceMode2D.Impulse);
+                    }
                 }
             }
         }
