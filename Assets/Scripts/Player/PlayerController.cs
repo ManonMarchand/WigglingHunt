@@ -1,7 +1,9 @@
 using ScientificGameJam.SFX;
 using ScientificGameJam.SO;
+using ScientificGameJam.Translation;
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +12,9 @@ namespace ScientificGameJam.Player
     public class PlayerController : MonoBehaviour
     {
         public PlayerInfo Info { set; private get; }
+
+        [SerializeField]
+        private TMP_Text _dyeLeftText;
 
         private Rigidbody2D _rb;
         private PlayerInput _input;
@@ -32,7 +37,7 @@ namespace ScientificGameJam.Player
 
         public ColorType Color => Info.Color;
 
-        public int _ignoreMask;
+        private int _ignoreMask;
 
         private float _shake;
 
@@ -64,6 +69,8 @@ namespace ScientificGameJam.Player
             _ignoreMask = (1 << LayerMask.NameToLayer("Player"));
             _ignoreMask |= (1 << LayerMask.NameToLayer("Collectible"));
             _ignoreMask = ~_ignoreMask;
+
+            UpdateDyeText();
         }
 
         private void FixedUpdate()
@@ -97,6 +104,11 @@ namespace ScientificGameJam.Player
                 }
             }
             Shake();
+        }
+
+        public void UpdateDyeText()
+        {
+            _dyeLeftText.text = $"{Translate.Instance.Tr("dyeLeft")} {PlayerManager.Instance.GetCollectibleLeft(Info.Color)}";
         }
 
         public void Move(InputAction.CallbackContext value)
