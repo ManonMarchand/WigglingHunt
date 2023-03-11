@@ -33,9 +33,10 @@ namespace ScientificGameJam.Player
             Instance = this;
         }
 
+        private static Color[] _colors = new[] { Color.red, Color.green };
         public void RegisterSpawn(Transform spawn)
         {
-            _spawns.Add(new(spawn));
+            _spawns.Add(new(spawn, _colors[_spawns.Count % 2]));
         }
 
         public PlayerInput GetNextPlayer(PlayerInput player)
@@ -55,6 +56,7 @@ namespace ScientificGameJam.Player
             {
                 _spawns[freeSpot].Player = player;
                 player.transform.position = _spawns[freeSpot].Spawn.position;
+                player.GetComponent<SpriteRenderer>().color = _spawns[freeSpot].Color;
                 if (_spawns.All(x => x.Player != null))
                 {
                     IsReady = true;

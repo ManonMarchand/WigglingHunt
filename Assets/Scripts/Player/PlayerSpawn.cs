@@ -7,9 +7,10 @@ namespace ScientificGameJam.Player
 {
     public class PlayerSpawn
     {
-        public PlayerSpawn(Transform spawn)
+        public PlayerSpawn(Transform spawn, Color color)
         {
             Spawn = spawn;
+            Color = color;
         }
 
         public bool DoesContainsPlayer(PlayerInput p)
@@ -51,5 +52,6 @@ namespace ScientificGameJam.Player
 
         public PlayerInput Player { set; get; }
         public Transform Spawn { private set; get; }
+        public Color Color { private set; get; }
     }
 }
