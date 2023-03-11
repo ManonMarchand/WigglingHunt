@@ -85,7 +85,7 @@ namespace ScientificGameJam.Player
 
         public void CheckGlobalVictory()
         {
-            if (_spawns.All(x => x.IsWinning))
+            if (_spawns.All(x => x.IsWinning) && _remainingCollectibles.Values.All(x => x == 0))
             {
                 Debug.Log(Translate.Instance.Tr("winningText"));
             }
