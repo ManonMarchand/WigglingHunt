@@ -13,12 +13,10 @@ namespace ScientificGameJam.Level
             PlayerManager.Instance.RegisterCollectible(_color);
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.CompareTag("Player") && collision.GetComponent<PlayerController>().Color == _color)
+            if (collision.collider.CompareTag("Player") && collision.collider.GetComponent<PlayerController>().Color == _color)
             {
-                Debug.Log(collision.GetComponent<PlayerController>().Color);
-                Debug.Log(_color);
                 PlayerManager.Instance.Collect(_color);
                 Destroy(gameObject);
             }
