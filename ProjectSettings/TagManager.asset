@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Mitochondrias
+    uniqueID: 4155774613
+    locked: 0
   - name: Player
     uniqueID: 1296439689
     locked: 0
