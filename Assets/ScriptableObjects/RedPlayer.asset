@@ -39,7 +39,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   DeviationLimit: 0.9
-  TimeBeforeBoost: 1
+  TimeBeforeBoost: 0.2
   BoostDuration: 10
   Booster: 1.5
   MaxBoostSpeed: 24
