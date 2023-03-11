@@ -1,4 +1,7 @@
 {
+    "play": "Jouer",
+    "credits": "Crédits",
+
     "waitingPlayers": "En attente de tous les nano-chasseurs...",
     "winningText": "Virus identifié, mission accomplie!!"
 }
