@@ -1644,6 +1644,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d76120700ed7eb24dbf3ad4db8cb115c, type: 2}
   _waitingPlayerText: {fileID: 1459084127}
   _waitingCamera: {fileID: 554029836}
+  _separator: {fileID: 2047651701}
 --- !u!81 &1857248409
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1803,7 +1804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2047651702
 RectTransform:
   m_ObjectHideFlags: 0
