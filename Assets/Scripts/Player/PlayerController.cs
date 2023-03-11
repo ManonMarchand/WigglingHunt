@@ -116,6 +116,14 @@ namespace ScientificGameJam.Player
             _dyeLeftText.text = $"{Translate.Instance.Tr("dyeLeft")} {PlayerManager.Instance.GetCollectibleLeft(Info.Color)}";
         }
 
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.collider.CompareTag("Player"))
+            {
+                PlayerManager.Instance.GameOver();
+            }
+        }
+
         public void Move(InputAction.CallbackContext value)
         {
             _mov = value.ReadValue<Vector2>().normalized;
@@ -146,7 +154,6 @@ namespace ScientificGameJam.Player
                 if (v2 != Vector2.zero)
                 {
                     _aimDir = new(v2.x, v2.y);
-                    Debug.Log(_aimDir);
                 }
             }
         }
