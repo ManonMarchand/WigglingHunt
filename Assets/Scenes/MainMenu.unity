@@ -152,6 +152,14 @@ PrefabInstance:
       propertyPath: m_text
       value: "Fran\xE7ais"
       objectReference: {fileID: 0}
+    - target: {fileID: 1500461749020253960, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
+    - target: {fileID: 1500461749020253960, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
     - target: {fileID: 1629683811370192450, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -204,6 +212,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: French
       objectReference: {fileID: 0}
+    - target: {fileID: 8112313085931980552, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1160,6 +1172,14 @@ PrefabInstance:
       propertyPath: m_text
       value: English
       objectReference: {fileID: 0}
+    - target: {fileID: 1500461749020253960, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
+    - target: {fileID: 1500461749020253960, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
     - target: {fileID: 1629683811370192450, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1212,6 +1232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: English
       objectReference: {fileID: 0}
+    - target: {fileID: 8112313085931980552, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2335,6 +2359,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1534612513}
     m_Modifications:
+    - target: {fileID: 1500461749020253960, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
+    - target: {fileID: 1500461749020253960, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
     - target: {fileID: 1629683811370192450, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2383,14 +2415,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Credits
       objectReference: {fileID: 0}
+    - target: {fileID: 8112313085931980552, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8045118304051015536, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 0}
+      addedObject: {fileID: 25281672}
     - targetCorrespondingSourceObject: {fileID: 8045118304051015536, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 25281672}
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
