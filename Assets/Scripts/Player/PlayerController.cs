@@ -70,11 +70,14 @@ namespace ScientificGameJam.Player
             _sr = GetComponentInChildren<SpriteRenderer>();
             _lr.gameObject.SetActive(false);
 
-            _ignoreMask = (1 << LayerMask.NameToLayer("Player"));
+            UpdateDyeText();
+        }
+
+        private void Start()
+        {
+            _ignoreMask = (1 << gameObject.layer);
             _ignoreMask |= (1 << LayerMask.NameToLayer("Collectible"));
             _ignoreMask = ~_ignoreMask;
-
-            UpdateDyeText();
         }
 
         private bool CanPlay => PlayerManager.Instance.IsReady && !PlayerManager.Instance.DidGameEnded;
