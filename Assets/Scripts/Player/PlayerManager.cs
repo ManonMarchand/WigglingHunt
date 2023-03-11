@@ -120,7 +120,6 @@ namespace ScientificGameJam.Player
 
         public void CheckGlobalVictory()
         {
-            Debug.Log($"{_spawns.All(x => x.IsWinning)} && {_remainingCollectibles.Values.All(x => x == 0)}");
             if (_spawns.All(x => x.IsWinning) && _remainingCollectibles.Values.All(x => x == 0))
             {
                 SFXManager.Instance.WinningSFX.Play();
