@@ -21,6 +21,7 @@ namespace ScientificGameJam.Player
         private PlayerInput _input;
         private Camera _cam;
         private LineRenderer _lr;
+        private SpriteRenderer _sr;
 
         private float _laserTimer;
 
@@ -65,6 +66,7 @@ namespace ScientificGameJam.Player
             _input = GetComponent<PlayerInput>();
             _cam = GetComponentInChildren<Camera>();
             _lr = GetComponentInChildren<LineRenderer>();
+            _sr = GetComponent<SpriteRenderer>();
             _lr.gameObject.SetActive(false);
 
             _ignoreMask = (1 << LayerMask.NameToLayer("Player"));
@@ -110,6 +112,7 @@ namespace ScientificGameJam.Player
                 }
             }
             Shake();
+            _sr.sortingOrder = -Mathf.RoundToInt(transform.position.y * 1000f);
         }
 
         public void UpdateDyeText()

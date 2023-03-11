@@ -148,7 +148,7 @@ namespace ScientificGameJam.Player
                 player.transform.localScale = new(_spawns[freeSpot].Info.Scale, _spawns[freeSpot].Info.Scale, 1f);
                 player.GetComponent<PlayerController>().Info = _spawns[freeSpot].Info;
                 player.GetComponent<Rigidbody2D>().mass = _spawns[freeSpot].Info.Mass;
-                player.GetComponent<SpriteRenderer>().color = ToColor(_spawns[freeSpot].Info.Color);
+                player.GetComponent<SpriteRenderer>().sprite = _spawns[freeSpot].Info.Sprite;
                 _waitingCamera.gameObject.SetActive(false);
                 _separator.SetActive(_spawns.Count(x => x.Player != null) > 1);
                 if (_spawns.All(x => x.Player != null))

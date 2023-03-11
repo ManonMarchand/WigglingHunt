@@ -49,3 +49,4 @@ MonoBehaviour:
   CanShoot: 1
   LaserReloadTime: 0.5
   Scale: 1
+  Sprite: {fileID: 21300000, guid: f5541cf192cce1945a11e29a1e325667, type: 3}

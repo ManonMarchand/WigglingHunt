@@ -27,5 +27,7 @@ namespace ScientificGameJam.SO
         public float LaserReloadTime;
 
         public float Scale;
+
+        public Sprite Sprite;
     }
 }
