@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 192866540}
   - component: {fileID: 192866543}
   - component: {fileID: 192866542}
-  - component: {fileID: 192866541}
+  - component: {fileID: 192866544}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -162,18 +162,6 @@ RectTransform:
   m_AnchoredPosition: {x: 150, y: -67.5}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &192866541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192866539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d5d2391f3f37b1438a9731666333d76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &192866542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '{winningText}'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
   m_sharedMaterial: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
@@ -271,6 +259,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192866539}
   m_CullTransparentMesh: 1
+--- !u!114 &192866544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192866539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7053ae05c9d153438129a4554a76173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &261222020
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,6 +2487,7 @@ MonoBehaviour:
   _separator: {fileID: 2047651701}
   _victory: {fileID: 2116799060}
   _gameover: {fileID: 261222020}
+  _reasonTouching: {fileID: 0}
 --- !u!81 &1857248409
 AudioListener:
   m_ObjectHideFlags: 0
