@@ -52,10 +52,22 @@ namespace ScientificGameJam.Player
             }
         }
 
+        public int GetCollectibleLeft(ColorType color)
+        {
+            return _remainingCollectibles[color];
+        }
+
         public void Collect(ColorType color)
         {
             _remainingCollectibles[color]--;
             CheckGlobalVictory();
+            foreach (var s in _spawns)
+            {
+                if (s.Player != null)
+                {
+                    s.Player.GetComponent<PlayerController>().UpdateDyeText();
+                }
+            }
         }
 
         private bool _isReady;
