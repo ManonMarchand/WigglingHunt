@@ -2,6 +2,10 @@
     "play": "Jouer",
     "credits": "Crédits",
 
+    "gameover": "Partie fini",
+    "restart": "Rééssayer",
+    "backToMenu": "Retour au menu",
+
     "waitingPlayers": "En attente de tous les nano-chasseurs...",
     "winningText": "Virus identifié, mission accomplie!!",
     "loosingByTouching": "Pas touche la mouche! Vous vous êtes effondrés",
@@ -10,6 +14,6 @@
     "whatAmI": "Je suis un nano-chasseur et mes bras spaguettis sont des brins d'ADN spécialement conçus pour détecter l'ADN du virus qui infecte cette cellule. Allons l'attraper !",
     "mitochondria": "Un gentil organe respiratoire, plutôt inoffensif…",
     "dyeExplanation": "Le carburant qui fait briller les nanos-chasseurs!",
-     "lySoSome": "Je veux tout digérer, attention !!! Chasseurs de nanotechnologies, j'arrive !!!",
+    "lySoSome": "Je veux tout digérer, attention !!! Chasseurs de nanotechnologies, j'arrive !!!",
     "centroSome": "Je divise pour mieux régner, alors je n'aime pas les étrangers !"
 }

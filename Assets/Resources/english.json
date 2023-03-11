@@ -2,6 +2,10 @@
     "play": "Play",
     "credits": "Credits",
 
+    "gameover": "Game Over",
+    "restart": "Restart",
+    "backToMenu": "Back to Menu",
+
     "waitingPlayers": "Waiting for all nano-hunters to connect...",
     "winningText": "Virus identified, mission accomplished!!", 
     "loosingByTouching": "Touching is illegal, you just collided",
