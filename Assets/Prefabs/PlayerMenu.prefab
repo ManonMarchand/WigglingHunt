@@ -515,12 +515,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3432764863952147284, guid: fa27010f179acc147a53f1d9b27770d9, type: 3}
+      propertyPath: _dyeLeftText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7661589306894311987, guid: fa27010f179acc147a53f1d9b27770d9, type: 3}
       propertyPath: m_Name
       value: PlayerMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8323679966974603301, guid: fa27010f179acc147a53f1d9b27770d9, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2814070367735168696, guid: fa27010f179acc147a53f1d9b27770d9, type: 3}
       insertIndex: -1
