@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScientificGameJam.Translation;
+using System;
 using UnityEngine;
 
 namespace ScientificGameJam.Menu
@@ -29,6 +30,10 @@ namespace ScientificGameJam.Menu
             switch (tag)
             {
                 case "Credits": _credits.SetActive(value); break;
+
+                case "english": Translate.Instance.Tr("english"); break;
+                case "french": Translate.Instance.Tr("french"); break;
+
                 default: throw new NotImplementedException();
             }
         }
