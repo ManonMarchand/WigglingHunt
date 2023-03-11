@@ -73,9 +73,11 @@ namespace ScientificGameJam.Player
             UpdateDyeText();
         }
 
+        private bool CanPlay => PlayerManager.Instance.IsReady && !PlayerManager.Instance.DidGameEnded;
+
         private void FixedUpdate()
         {
-            if (PlayerManager.Instance.IsReady && !PlayerManager.Instance.DidGameEnded)
+            if (CanPlay)
             {
                 // Debug.Log($"Dot product value {Vector2.Dot(_prevMov, _mov)}");
                 if (Vector2.Dot(_prevMov, _mov) < Info.DeviationLimit) // condition on loosing booster
@@ -121,7 +123,7 @@ namespace ScientificGameJam.Player
 
         public void OnTeleport(InputAction.CallbackContext value)
         {
-            if (value.performed)
+            if (value.performed && CanPlay)
             {
                 var next = PlayerManager.Instance.GetNextPlayer(_input);
                 if (next != null) // Might happens if the others players aren't instanciated yet
@@ -151,7 +153,7 @@ namespace ScientificGameJam.Player
 
         public void OnFire(InputAction.CallbackContext value)
         {
-            if (value.performed && Info.CanShoot && _canShoot)
+            if (value.performed && Info.CanShoot && _canShoot && CanPlay)
             {
                 var hit = Physics2D.Raycast(transform.position, _aimDir, float.PositiveInfinity, _ignoreMask);
                 if (hit.collider != null)
