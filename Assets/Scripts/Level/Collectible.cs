@@ -17,6 +17,8 @@ namespace ScientificGameJam.Level
         {
             if (collision.CompareTag("Player") && collision.GetComponent<PlayerController>().Color == _color)
             {
+                Debug.Log(collision.GetComponent<PlayerController>().Color);
+                Debug.Log(_color);
                 PlayerManager.Instance.Collect(_color);
                 Destroy(gameObject);
             }
