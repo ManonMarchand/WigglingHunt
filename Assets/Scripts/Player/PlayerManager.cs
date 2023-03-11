@@ -138,6 +138,7 @@ namespace ScientificGameJam.Player
             {
                 _spawns[freeSpot].Player = player;
                 player.transform.position = _spawns[freeSpot].Spawn.position;
+                player.transform.localScale = new(_spawns[freeSpot].Info.Scale, _spawns[freeSpot].Info.Scale, 1f);
                 player.GetComponent<PlayerController>().Info = _spawns[freeSpot].Info;
                 player.GetComponent<Rigidbody2D>().mass = _spawns[freeSpot].Info.Mass;
                 player.GetComponent<SpriteRenderer>().color = ToColor(_spawns[freeSpot].Info.Color);

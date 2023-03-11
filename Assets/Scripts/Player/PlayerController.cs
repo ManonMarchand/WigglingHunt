@@ -122,7 +122,7 @@ namespace ScientificGameJam.Player
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.collider.CompareTag("Player"))
+            if (collision.collider.CompareTag("Player") && SceneManager.GetActiveScene().name != "MainMenu")
             {
                 PlayerManager.Instance.GameOver();
             }

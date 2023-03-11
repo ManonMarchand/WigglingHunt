@@ -48,3 +48,4 @@ MonoBehaviour:
   Color: 1
   CanShoot: 1
   LaserReloadTime: 0.5
+  Scale: 1

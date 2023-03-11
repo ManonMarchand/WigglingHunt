@@ -47,3 +47,5 @@ MonoBehaviour:
   ShakeAmount: 0
   Color: 0
   CanShoot: 0
+  LaserReloadTime: 0
+  Scale: 0.75

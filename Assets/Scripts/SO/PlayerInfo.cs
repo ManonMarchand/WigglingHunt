@@ -25,5 +25,7 @@ namespace ScientificGameJam.SO
         public bool CanShoot;
 
         public float LaserReloadTime;
+
+        public float Scale;
     }
 }
