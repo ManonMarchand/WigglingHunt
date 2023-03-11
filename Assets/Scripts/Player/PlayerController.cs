@@ -13,6 +13,11 @@ namespace ScientificGameJam.Player
         private PlayerInput _input;
         private Vector2 _mov;
 
+        private Vector2 _prevMov;
+        private float _boostTimer;
+
+        public ColorType Color { set; get; }
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -23,8 +28,19 @@ namespace ScientificGameJam.Player
         {
             if (PlayerManager.Instance.IsReady)
             {
-                _rb.velocity = _info.Speed * Time.fixedDeltaTime * _mov;
+                if (true) // TODO: Here!
+                {
+                    _boostTimer = 0f;
+                }
+
+                _prevMov = _mov;
+                _rb.velocity = _info.Speed * Time.fixedDeltaTime * _mov * (_info.TimeBeforeBoost > 0f && _boostTimer >= _info.TimeBeforeBoost ? 2f : 1f);
             }
+        }
+
+        private void Update()
+        {
+            _boostTimer += Time.deltaTime;
         }
 
         public void Move(InputAction.CallbackContext value)
@@ -39,9 +55,7 @@ namespace ScientificGameJam.Player
                 var next = PlayerManager.Instance.GetNextPlayer(_input);
                 if (next != null) // Might happens if the others players aren't instanciated yet
                 {
-                    var tmpPos = transform.position;
-                    transform.position = next.transform.position;
-                    next.transform.position = tmpPos;
+                    (next.transform.position, transform.position) = (transform.position, next.transform.position);
                 }
             }
         }

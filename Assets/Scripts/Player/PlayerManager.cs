@@ -10,7 +10,6 @@ namespace ScientificGameJam.Player
 {
     public class PlayerManager : MonoBehaviour
     {
-
         public static Color ToColor(ColorType type)
         {
             return type switch
@@ -80,7 +79,9 @@ namespace ScientificGameJam.Player
             {
                 _spawns[freeSpot].Player = player;
                 player.transform.position = _spawns[freeSpot].Spawn.position;
-                player.GetComponent<SpriteRenderer>().color = ToColor(_spawns[freeSpot].Color);
+                var c = _spawns[freeSpot].Color;
+                player.GetComponent<SpriteRenderer>().color = ToColor(c);
+                player.GetComponent<PlayerController>().Color = c;
                 if (_spawns.All(x => x.Player != null))
                 {
                     IsReady = true;

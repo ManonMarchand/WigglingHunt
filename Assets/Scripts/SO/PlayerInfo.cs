@@ -7,5 +7,7 @@ namespace ScientificGameJam.SO
     {
         [Tooltip("Speed of the player")]
         public float Speed;
+
+        public float TimeBeforeBoost;
     }
 }
