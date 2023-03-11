@@ -10,10 +10,17 @@ namespace ScientificGameJam.Player
 
         private Rigidbody2D _rb;
         private PlayerInput _input;
-        private Vector2 _mov;
+        private Camera _cam;
 
+        // Movement vector
+        private Vector2 _mov;
+        // Movement vector on previous physic frame
         private Vector2 _prevMov;
+
+        // Internal timer to calculate boost
         private float _boostTimer;
+
+        private float _aimAngle;
 
         public ColorType Color => Info.Color;
 
@@ -21,6 +28,7 @@ namespace ScientificGameJam.Player
         {
             _rb = GetComponent<Rigidbody2D>();
             _input = GetComponent<PlayerInput>();
+            _cam = GetComponentInChildren<Camera>();
         }
 
         private void FixedUpdate()
@@ -61,6 +69,40 @@ namespace ScientificGameJam.Player
                     (next.transform.position, transform.position) = (transform.position, next.transform.position);
                 }
             }
+        }
+
+        public void OnAim(InputAction.CallbackContext value)
+        {
+            var v2 = value.ReadValue<Vector2>();
+            if (_input.currentControlScheme == "Keyboard&Mouse")
+            {
+                v2 = _cam.ScreenToWorldPoint(v2);
+                float angleRad = Mathf.Atan2(v2.y - transform.position.y, v2.x - transform.position.x);
+                float angle = 180f / Mathf.PI * angleRad;
+                _aimAngle = angle;
+            }
+            else
+            {
+                if (v2 != Vector2.zero)
+                {
+                    Vector3 forward = new(v2.x, 0f, v2.y);
+                    var rot = Quaternion.LookRotation(forward, Vector3.up);
+                    _aimAngle = rot.eulerAngles.y;
+                }
+            }
+        }
+
+        public void OnFire(InputAction.CallbackContext value)
+        {
+            if (value.performed)
+            {
+            }
+        }
+
+        public void OnDrawGizmos()
+        {
+            Gizmos.color = UnityEngine.Color.blue;
+            Gizmos.DrawLine(transform.position, (Vector2)(Quaternion.Euler(0, 0, _aimAngle) * Vector2.right) * 20f);
         }
     }
 }

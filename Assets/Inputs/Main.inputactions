@@ -24,13 +24,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Aim",
+                    "name": "Fire",
                     "type": "Button",
-                    "id": "abb64ff9-f530-4c00-93fd-cd598cd6df24",
+                    "id": "f3f0f6f8-9f5b-4cc4-8803-ef92e85b1edd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Aim",
+                    "type": "Value",
+                    "id": "abb64ff9-f530-4c00-93fd-cd598cd6df24",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -169,11 +178,44 @@
                 {
                     "name": "",
                     "id": "b8162a85-9258-4c8f-9c93-cb1c7e004f28",
-                    "path": "",
+                    "path": "<Pointer>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a60f587-9061-42c0-a7db-842031b0daba",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5492a00-3d41-4fa9-9d19-d0142cdbe6eb",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "59c24587-623c-4a8e-b140-e80329f0806e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -159,7 +159,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1296439689
-  m_SortingLayer: -1
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 90b2186ada8992544a119410bc7d3399, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -309,9 +309,37 @@ MonoBehaviour:
     m_ActionId: 062d21d0-af17-4351-8cca-dc4599652222
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3432764863952147284}
+        m_TargetAssemblyTypeName: ScientificGameJam.Player.PlayerController, Assembly-CSharp
+        m_MethodName: OnAim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: abb64ff9-f530-4c00-93fd-cd598cd6df24
     m_ActionName: Player/Aim
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3432764863952147284}
+        m_TargetAssemblyTypeName: ScientificGameJam.Player.PlayerController, Assembly-CSharp
+        m_MethodName: OnFire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f3f0f6f8-9f5b-4cc4-8803-ef92e85b1edd
+    m_ActionName: Player/Fire[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

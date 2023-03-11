@@ -18,5 +18,7 @@ namespace ScientificGameJam.SO
         public float MaxBoostSpeed;
 
         public ColorType Color;
+
+        public bool CanShoot;
     }
 }
