@@ -8,6 +8,10 @@ namespace ScientificGameJam.SO
         [Tooltip("Speed of the player")]
         public float Speed;
 
+        public AnimationCurve BoostCurve;
+
         public float TimeBeforeBoost;
+        public float BoostDuration;
+        public float MaxBoostSpeed;
     }
 }
