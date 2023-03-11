@@ -51,9 +51,10 @@ namespace ScientificGameJam.Player
                 // Debug.Log($"Dot product value {Vector2.Dot(_prevMov, _mov)}");
                 if (Vector2.Dot(_prevMov, _mov) < Info.DeviationLimit) // condition on loosing booster
                 {
-                    Debug.Log("I did a reset");
+                    //Debug.Log("I did a reset");
                     _boostTimer = 0f; // in seconds
                 }
+                //Info.BoostCurve.Evaluate(Time.fixedDeltaTime)
 
                 _prevMov = _mov;
                 _rb.velocity = Info.Speed * Time.fixedDeltaTime * _mov * (Info.TimeBeforeBoost > 0f && _boostTimer >= Info.TimeBeforeBoost ? 2f : 1f);
