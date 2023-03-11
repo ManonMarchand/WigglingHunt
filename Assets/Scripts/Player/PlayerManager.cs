@@ -1,4 +1,5 @@
-﻿using ScientificGameJam.Translation;
+﻿using ScientificGameJam.SO;
+using ScientificGameJam.Translation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,9 @@ namespace ScientificGameJam.Player
 {
     public class PlayerManager : MonoBehaviour
     {
+        [SerializeField]
+        private PlayerInfo[] _infos;
+
         public static Color ToColor(ColorType type)
         {
             return type switch
@@ -28,6 +32,26 @@ namespace ScientificGameJam.Player
 
         private readonly List<PlayerSpawn> _spawns = new();
 
+        private Dictionary<ColorType, int> _remainingCollectibles = new();
+
+        public void RegisterCollectible(ColorType color)
+        {
+            if (!_remainingCollectibles.ContainsKey(color))
+            {
+                _remainingCollectibles.Add(color, 1);
+            }
+            else
+            {
+                _remainingCollectibles[color]++;
+            }
+        }
+
+        public void Collect(ColorType color)
+        {
+            _remainingCollectibles[color]--;
+            CheckGlobalVictory();
+        }
+
         private bool _isReady;
         public bool IsReady
         {
@@ -44,10 +68,9 @@ namespace ScientificGameJam.Player
             Instance = this;
         }
 
-        private static ColorType[] _colors = new[] { ColorType.RED, ColorType.GREEN };
         public void RegisterSpawn(Transform spawn)
         {
-            _spawns.Add(new(spawn, _colors[_spawns.Count % 2]));
+            _spawns.Add(new(spawn, _infos[_spawns.Count % 2]));
         }
 
         public PlayerSpawn GetSpawn(PlayerInput player)
@@ -80,9 +103,8 @@ namespace ScientificGameJam.Player
             {
                 _spawns[freeSpot].Player = player;
                 player.transform.position = _spawns[freeSpot].Spawn.position;
-                var c = _spawns[freeSpot].Color;
-                player.GetComponent<SpriteRenderer>().color = ToColor(c);
-                player.GetComponent<PlayerController>().Color = c;
+                player.GetComponent<PlayerController>().Info = _spawns[freeSpot].Info;
+                player.GetComponent<SpriteRenderer>().color = ToColor(_spawns[freeSpot].Info.Color);
                 if (_spawns.All(x => x.Player != null))
                 {
                     IsReady = true;

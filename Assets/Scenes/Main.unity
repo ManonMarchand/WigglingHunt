@@ -555,6 +555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67efb5d391557c141af7d6cf6f630413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _infos:
+  - {fileID: 11400000, guid: 32e348e3156fc354f81c8bd6b51eae3e, type: 2}
+  - {fileID: 11400000, guid: d76120700ed7eb24dbf3ad4db8cb115c, type: 2}
   _waitingPlayerText: {fileID: 1459084127}
 --- !u!81 &1857248409
 AudioListener:

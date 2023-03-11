@@ -6,8 +6,7 @@ namespace ScientificGameJam.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField]
-        private PlayerInfo _info;
+        public PlayerInfo Info { set; private get; }
 
         private Rigidbody2D _rb;
         private PlayerInput _input;
@@ -37,8 +36,12 @@ namespace ScientificGameJam.Player
                 }
 
                 _prevMov = _mov;
+<<<<<<< HEAD
                 _rb.velocity = _info.Speed * Time.fixedDeltaTime * _mov * (_info.TimeBeforeBoost > 0f && _boostTimer >= _info.TimeBeforeBoost ? 2f : 1f);
                 // Debug.Log($"Velocity {_rb.velocity.magnitude}");
+=======
+                _rb.velocity = Info.Speed * Time.fixedDeltaTime * _mov * (Info.TimeBeforeBoost > 0f && _boostTimer >= Info.TimeBeforeBoost ? 2f : 1f);
+>>>>>>> ce6a48290bf0e1b9818664e76299e3fb3bbd4fe6
             }
         }
 

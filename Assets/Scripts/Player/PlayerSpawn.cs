@@ -1,14 +1,15 @@
-﻿using UnityEngine;
+﻿using ScientificGameJam.SO;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace ScientificGameJam.Player
 {
     public class PlayerSpawn
     {
-        public PlayerSpawn(Transform spawn, ColorType color)
+        public PlayerSpawn(Transform spawn, PlayerInfo info)
         {
             Spawn = spawn;
-            Color = color;
+            Info = info;
         }
 
         public bool DoesContainsPlayer(PlayerInput p)
@@ -50,7 +51,8 @@ namespace ScientificGameJam.Player
 
         public PlayerInput Player { set; get; }
         public Transform Spawn { private set; get; }
-        public ColorType Color { private set; get; }
+        public PlayerInfo Info { private set; get; }
+        public ColorType Color => Info.Color;
         private bool _isWinning;
         public bool IsWinning
         {
