@@ -187,6 +187,14 @@ namespace ScientificGameJam.Player
             }
         }
 
+        public void OnReset(InputAction.CallbackContext value)
+        {
+            if (value.performed)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+
         private IEnumerator Reload()
         {
             yield return new WaitForSeconds(Info.LaserReloadTime);
