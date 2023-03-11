@@ -1,3 +1,13 @@
 {
-    "waitingPlayers": "En attente de tous les joueurs..."
+    "play": "Jouer",
+    "credits": "Crédits",
+
+    "waitingPlayers": "En attente de tous les nano-chasseurs...",
+    "winningText": "Virus identifié, mission accomplie!!",
+    "loosingByTouching": "Pas touche la mouche! Vous vous êtes effondrés",
+    "welcomeInGame": "Un ensemble de cellules vient d'être infecté par un virus. Cette situation requiert deux brillants nano-chasseurs!",
+    "winningLevel0": "L'union fait la force, ce virus est identifié! ☺",
+    "whatAmI": "Je suis un nano-chasseur et mes bras spaguettis sont des brins d'ADN spécialement conçus pour détecter l'ADN du virus qui infecte cette cellule. Allons l'attraper !",
+    "mitochondria": "Un gentil organe respiratoire, plutôt inoffensif…",
+    "dyeExplanation": "Le carburant qui fait briller les nanos-chasseurs!"
 }
