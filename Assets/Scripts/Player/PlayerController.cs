@@ -158,6 +158,9 @@ namespace ScientificGameJam.Player
             }
         }
 
+        private Vector3 ConvertVector(Vector3 value)
+            => new(value.x, value.y, -1f);
+
         public void OnFire(InputAction.CallbackContext value)
         {
             if (value.performed && Info.CanShoot && _canShoot && CanPlay)
@@ -168,7 +171,7 @@ namespace ScientificGameJam.Player
                     SFXManager.Instance.LaserSFX.Play();
                     _shake = Info.ShakeTime;
                     _lr.gameObject.SetActive(true);
-                    _lr.SetPositions(new[] { transform.position, (Vector3)hit.point });
+                    _lr.SetPositions(new[] { ConvertVector(transform.position), ConvertVector((Vector3)hit.point) });
                     _laserTimer = .3f;
                     if (hit.collider.TryGetComponent<Rigidbody2D>(out var comp))
                     {
