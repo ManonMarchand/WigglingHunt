@@ -180,7 +180,11 @@ namespace ScientificGameJam.Player
                     _lr.gameObject.SetActive(true);
                     _lr.SetPositions(new[] { ConvertVector(transform.position), ConvertVector((Vector3)hit.point) });
                     _laserTimer = .3f;
-                    if (hit.collider.TryGetComponent<Rigidbody2D>(out var comp))
+                    if (hit.collider.CompareTag("Destructible"))
+                    {
+                        Destroy(hit.collider.gameObject);
+                    }
+                    else if (hit.collider.TryGetComponent<Rigidbody2D>(out var comp))
                     {
                         comp.AddForce(_aimDir.normalized * 10f, ForceMode2D.Impulse);
                     }
