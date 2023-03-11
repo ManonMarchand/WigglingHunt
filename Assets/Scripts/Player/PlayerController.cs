@@ -29,19 +29,15 @@ namespace ScientificGameJam.Player
 
             {
                 // Debug.Log($"Dot product value {Vector2.Dot(_prevMov, _mov)}");
-                if (Vector2.Dot(_prevMov, _mov) < _info.DeviationLimit) // condition on loosing booster
+                if (Vector2.Dot(_prevMov, _mov) < Info.DeviationLimit) // condition on loosing booster
                 {
                     Debug.Log("I did a reset");
                     _boostTimer = 0f; // in seconds
                 }
 
                 _prevMov = _mov;
-<<<<<<< HEAD
-                _rb.velocity = _info.Speed * Time.fixedDeltaTime * _mov * (_info.TimeBeforeBoost > 0f && _boostTimer >= _info.TimeBeforeBoost ? 2f : 1f);
-                // Debug.Log($"Velocity {_rb.velocity.magnitude}");
-=======
                 _rb.velocity = Info.Speed * Time.fixedDeltaTime * _mov * (Info.TimeBeforeBoost > 0f && _boostTimer >= Info.TimeBeforeBoost ? 2f : 1f);
->>>>>>> ce6a48290bf0e1b9818664e76299e3fb3bbd4fe6
+                // Debug.Log($"Velocity {_rb.velocity.magnitude}");
             }
         }
 

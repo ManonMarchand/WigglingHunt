@@ -40,4 +40,5 @@ MonoBehaviour:
   DeviationLimit: 0.9
   TimeBeforeBoost: 2
   BoostDuration: 2
-  MaxBoostSpeed: 0
+  MaxBoostSpeed: 24
+  Color: 0
