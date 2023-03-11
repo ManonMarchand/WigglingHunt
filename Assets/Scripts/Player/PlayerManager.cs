@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScientificGameJam.Translation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -63,7 +64,7 @@ namespace ScientificGameJam.Player
         {
             if (_spawns.All(x => x.IsWinning))
             {
-                Debug.Log("Wow you won");
+                Debug.Log(Translate.Instance.Tr("winningText"));
             }
         }
 

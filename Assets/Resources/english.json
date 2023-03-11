@@ -1,3 +1,4 @@
 {
-    "waitingPlayers": "Waiting for all players to connect..."
+    "waitingPlayers": "Waiting for all nano-hunters to connect...",
+    "winningText": "Virus identified, mission accomplished!!"
 }
