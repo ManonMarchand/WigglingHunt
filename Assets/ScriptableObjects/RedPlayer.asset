@@ -39,8 +39,11 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   DeviationLimit: 0.9
-  TimeBeforeBoost: 2
-  BoostDuration: 2
+  TimeBeforeBoost: 1
+  BoostDuration: 10
+  Booster: 1.5
   MaxBoostSpeed: 24
+  ShakeTime: 0
+  ShakeAmount: 0
   Color: 0
   CanShoot: 0

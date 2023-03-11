@@ -15,7 +15,10 @@ namespace ScientificGameJam.SO
 
         public float TimeBeforeBoost;
         public float BoostDuration;
+        public float Booster;
         public float MaxBoostSpeed;
+        public float ShakeTime;
+        public float ShakeAmount;
 
         public ColorType Color;
 

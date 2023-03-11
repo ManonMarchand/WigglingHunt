@@ -30,6 +30,25 @@ namespace ScientificGameJam.Player
 
         public int _ignoreMask;
 
+        private float _shake;
+
+        private float _decreaseFactor=0.7f;
+
+        private void Shake()
+        {
+            if (_shake > 0f)
+            {
+                _cam.transform.localPosition = UnityEngine.Random.insideUnitCircle * Info.ShakeAmount;
+                _cam.transform.localPosition = new(_cam.transform.localPosition.x, _cam.transform.localPosition.y, -10f);
+                _shake -= Time.deltaTime * _decreaseFactor;
+
+            }
+            else
+            {
+                _shake = 0f;
+            }
+        }
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -54,10 +73,10 @@ namespace ScientificGameJam.Player
                     //Debug.Log("I did a reset");
                     _boostTimer = 0f; // in seconds
                 }
-                //Info.BoostCurve.Evaluate(Time.fixedDeltaTime)
+                
 
                 _prevMov = _mov;
-                _rb.velocity = Info.Speed * Time.fixedDeltaTime * _mov * (Info.TimeBeforeBoost > 0f && _boostTimer >= Info.TimeBeforeBoost ? 2f : 1f);
+                _rb.velocity = Info.Speed * Time.fixedDeltaTime * _mov * (_boostTimer >= Info.TimeBeforeBoost ? Info.Booster * ( 1f+ Info.BoostCurve.Evaluate(Time.fixedDeltaTime)) : 1f);
                 // Debug.Log($"Velocity {_rb.velocity.magnitude}");
             }
         }
@@ -73,6 +92,7 @@ namespace ScientificGameJam.Player
                     _lr.gameObject.SetActive(false);
                 }
             }
+            Shake();
         }
 
         public void Move(InputAction.CallbackContext value)
@@ -117,6 +137,7 @@ namespace ScientificGameJam.Player
                 var hit = Physics2D.Raycast(transform.position, _aimDir, float.PositiveInfinity, _ignoreMask);
                 if (hit.collider != null)
                 {
+                    _shake = Info.ShakeTime;
                     _lr.gameObject.SetActive(true);
                     _lr.SetPositions(new[] { transform.position, (Vector3)hit.point });
                     _laserTimer = .3f;

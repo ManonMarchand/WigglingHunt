@@ -41,6 +41,9 @@ MonoBehaviour:
   DeviationLimit: 0
   TimeBeforeBoost: 0
   BoostDuration: 0
+  Booster: 1
   MaxBoostSpeed: 0
+  ShakeTime: 0.3
+  ShakeAmount: 0.1
   Color: 1
   CanShoot: 1
