@@ -53,7 +53,7 @@ namespace ScientificGameJam.Player
             {
                 _spawns[freeSpot].Player = player;
                 player.transform.position = _spawns[freeSpot].Spawn.position;
-                if (_spawns.All(x => x != null))
+                if (_spawns.All(x => x.Player != null))
                 {
                     IsReady = true;
                 }
