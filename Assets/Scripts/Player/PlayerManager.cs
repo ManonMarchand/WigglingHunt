@@ -82,7 +82,14 @@ namespace ScientificGameJam.Player
         {
             set
             {
-                _waitingPlayerText.gameObject.SetActive(!value);
+                try
+                {
+                    _waitingPlayerText.gameObject.SetActive(!value);
+                }
+                catch (Exception _)
+                {
+                    // TODO
+                }
                 _isReady = value;
             }
             get => _isReady;
