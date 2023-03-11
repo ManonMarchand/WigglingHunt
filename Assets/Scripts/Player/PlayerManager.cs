@@ -28,6 +28,26 @@ namespace ScientificGameJam.Player
 
         private readonly List<PlayerSpawn> _spawns = new();
 
+        private Dictionary<ColorType, int> _remainingCollectibles = new();
+
+        public void RegisterCollectible(ColorType color)
+        {
+            if (!_remainingCollectibles.ContainsKey(color))
+            {
+                _remainingCollectibles.Add(color, 1);
+            }
+            else
+            {
+                _remainingCollectibles[color]++;
+            }
+        }
+
+        public void Collect(ColorType color)
+        {
+            _remainingCollectibles[color]--;
+            CheckGlobalVictory();
+        }
+
         private bool _isReady;
         public bool IsReady
         {
