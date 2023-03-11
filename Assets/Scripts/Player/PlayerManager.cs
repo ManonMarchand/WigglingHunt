@@ -38,7 +38,7 @@ namespace ScientificGameJam.Player
         private GameObject _separator;
 
         [SerializeField]
-        private GameObject _victory, _gameover;
+        private GameObject _victory, _gameover, _reasonTouching;
 
         private readonly List<PlayerSpawn> _spawns = new();
 
@@ -129,11 +129,15 @@ namespace ScientificGameJam.Player
             }
         }
 
-        public void GameOver()
+        public void GameOver(bool didTouch)
         {
             SFXManager.Instance.LoosingSFX.Play();
             DidGameEnded = true;
             _gameover.SetActive(true);
+            if (didTouch)
+            {
+                _reasonTouching.SetActive(true);
+            }
         }
 
         public void OnPlayerJoin(PlayerInput player)

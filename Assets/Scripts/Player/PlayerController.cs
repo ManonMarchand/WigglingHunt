@@ -127,7 +127,7 @@ namespace ScientificGameJam.Player
         {
             if (collision.collider.CompareTag("Player") && SceneManager.GetActiveScene().name != "MainMenu")
             {
-                PlayerManager.Instance.GameOver();
+                PlayerManager.Instance.GameOver(true);
             }
         }
 

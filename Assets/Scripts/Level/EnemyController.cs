@@ -9,7 +9,7 @@ namespace ScientificGameJam.Level
         {
             if (collision.collider.CompareTag("Player"))
             {
-                PlayerManager.Instance.GameOver();
+                PlayerManager.Instance.GameOver(false);
             }
         }
     }
