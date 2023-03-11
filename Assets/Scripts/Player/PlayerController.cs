@@ -44,6 +44,8 @@ namespace ScientificGameJam.Player
 
         private float _decreaseFactor=0.7f;
 
+        private float _stunDuration;
+
         private void Shake()
         {
             if (_shake > 0f)
@@ -79,29 +81,27 @@ namespace ScientificGameJam.Player
 
         private void FixedUpdate()
         {
-            if (CanPlay)
+            if (!CanPlay)
             {
-                // Debug.Log($"Dot product value {Vector2.Dot(_prevMov, _mov)}");
+                _rb.velocity = Vector2.zero;
+            }
+            else if (_stunDuration <= 0f)
+            {
                 if (Vector2.Dot(_prevMov, _mov) < Info.DeviationLimit) // condition on loosing booster
                 {
-                    //Debug.Log("I did a reset");
                     _boostTimer = 0f; // in seconds
                 }
                 
 
                 _prevMov = _mov;
                 _rb.velocity = Info.Speed * Time.fixedDeltaTime * _mov * (_boostTimer >= Info.TimeBeforeBoost ? Info.Booster * ( 1f+ Info.BoostCurve.Evaluate(Time.fixedDeltaTime)) : 1f);
-                // Debug.Log($"Velocity {_rb.velocity.magnitude}");
-            }
-            else
-            {
-                _rb.velocity = Vector2.zero;
             }
         }
 
         private void Update()
         {
             _boostTimer += Time.deltaTime;
+            _stunDuration -= Time.deltaTime;
             if (_laserTimer > 0f)
             {
                 _laserTimer -= Time.deltaTime;
@@ -112,6 +112,11 @@ namespace ScientificGameJam.Player
             }
             Shake();
             _sr.sortingOrder = -Mathf.RoundToInt(transform.position.y * 1000f);
+        }
+
+        public void Stun()
+        {
+            _stunDuration = 1f;
         }
 
         public void UpdateDyeText()
@@ -180,6 +185,10 @@ namespace ScientificGameJam.Player
                     _lr.gameObject.SetActive(true);
                     _lr.SetPositions(new[] { ConvertVector(transform.position), ConvertVector((Vector3)hit.point) });
                     _laserTimer = .3f;
+                    if (hit.collider.CompareTag("Player"))
+                    {
+                        hit.collider.GetComponent<PlayerController>().Stun();
+                    }
                     if (hit.collider.CompareTag("Destructible"))
                     {
                         Destroy(hit.collider.gameObject);

@@ -2487,7 +2487,7 @@ MonoBehaviour:
   _separator: {fileID: 2047651701}
   _victory: {fileID: 2116799060}
   _gameover: {fileID: 261222020}
-  _reasonTouching: {fileID: 0}
+  _reasonTouching: {fileID: 912864009}
 --- !u!81 &1857248409
 AudioListener:
   m_ObjectHideFlags: 0
