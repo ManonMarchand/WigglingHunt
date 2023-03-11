@@ -1105,8 +1105,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '{waitingPlayers}'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
+  m_sharedMaterial: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
