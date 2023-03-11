@@ -47,3 +47,4 @@ MonoBehaviour:
   ShakeAmount: 0.1
   Color: 1
   CanShoot: 1
+  LaserReloadTime: 0.5

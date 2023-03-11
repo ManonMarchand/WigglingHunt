@@ -1,6 +1,7 @@
 using ScientificGameJam.SFX;
 using ScientificGameJam.SO;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,8 @@ namespace ScientificGameJam.Player
         private LineRenderer _lr;
 
         private float _laserTimer;
+
+        private bool _canShoot;
 
         // Movement vector
         private Vector2 _mov;
@@ -133,7 +136,7 @@ namespace ScientificGameJam.Player
 
         public void OnFire(InputAction.CallbackContext value)
         {
-            if (value.performed && Info.CanShoot)
+            if (value.performed && Info.CanShoot && _canShoot)
             {
                 var hit = Physics2D.Raycast(transform.position, _aimDir, float.PositiveInfinity, _ignoreMask);
                 if (hit.collider != null)
@@ -147,8 +150,16 @@ namespace ScientificGameJam.Player
                     {
                         comp.AddForce(_aimDir.normalized * 10f, ForceMode2D.Impulse);
                     }
+                    _canShoot = false;
+                    StartCoroutine(Reload());
                 }
             }
+        }
+
+        private IEnumerator Reload()
+        {
+            yield return new WaitForSeconds(Info.LaserReloadTime);
+            _canShoot = true;
         }
 
         public void OnDrawGizmos()
