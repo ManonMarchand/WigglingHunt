@@ -2,6 +2,10 @@
     "play": "Play",
     "credits": "Credits",
 
+    "gameover": "Game Over",
+    "restart": "Restart",
+    "backToMenu": "Back to Menu",
+
     "waitingPlayers": "Waiting for all nano-hunters to connect...",
     "winningText": "Virus identified, mission accomplished!!", 
     "loosingByTouching": "Touching is illegal, you just collided",
@@ -9,5 +13,7 @@
     "winningLevel0": "Together we shine and the virus is identifed! ☺",
     "whatAmI": "I am a nano-hunter, my wiggling arms are DNA strands designed to hunt the one of a specific virus! Let's go and grab that!",
     "mitochondria": "A cute respiratory organ, quite innofensive…",
-    "dyeExplanation": "Nano-hunters brightness fuel!"
+    "dyeExplanation": "Nano-hunters brightness fuel!",
+    "lySoSome": "I want to digest everything, attention!!! Nano-Hunters I am coming!!!",
+    "centroSome": "I divide and rule so I don't like outsiders!"
 }
