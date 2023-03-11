@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RedPlayer
   m_EditorClassIdentifier: 
   Speed: 300
+  Mass: 10
   BoostCurve:
     serializedVersion: 2
     m_Curve:

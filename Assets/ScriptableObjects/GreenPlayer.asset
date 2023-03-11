@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GreenPlayer
   m_EditorClassIdentifier: 
   Speed: 200
+  Mass: 1
   BoostCurve:
     serializedVersion: 2
     m_Curve:
@@ -37,6 +38,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  DeviationLimit: 0
   TimeBeforeBoost: 0
   BoostDuration: 0
   MaxBoostSpeed: 0

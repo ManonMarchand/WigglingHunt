@@ -30,6 +30,9 @@ namespace ScientificGameJam.Player
         [SerializeField]
         private TMP_Text _waitingPlayerText;
 
+        [SerializeField]
+        private Camera _waitingCamera;
+
         private readonly List<PlayerSpawn> _spawns = new();
 
         private Dictionary<ColorType, int> _remainingCollectibles = new();
@@ -104,7 +107,9 @@ namespace ScientificGameJam.Player
                 _spawns[freeSpot].Player = player;
                 player.transform.position = _spawns[freeSpot].Spawn.position;
                 player.GetComponent<PlayerController>().Info = _spawns[freeSpot].Info;
+                player.GetComponent<Rigidbody2D>().mass = _spawns[freeSpot].Info.Mass;
                 player.GetComponent<SpriteRenderer>().color = ToColor(_spawns[freeSpot].Info.Color);
+                _waitingCamera.gameObject.SetActive(false);
                 if (_spawns.All(x => x.Player != null))
                 {
                     IsReady = true;
@@ -118,6 +123,10 @@ namespace ScientificGameJam.Player
             Assert.AreNotEqual(-1, freeSpot);
             _spawns[freeSpot].Player = null;
             IsReady = false;
+            if (_spawns.All(x => x.Player == null))
+            {
+                _waitingCamera.gameObject.SetActive(true);
+            }
         }
     }
 }
