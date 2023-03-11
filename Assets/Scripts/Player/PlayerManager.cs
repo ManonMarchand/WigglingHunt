@@ -57,6 +57,10 @@ namespace ScientificGameJam.Player
 
         public int GetCollectibleLeft(ColorType color)
         {
+            if (!_remainingCollectibles.ContainsKey(color))
+            {
+                return 0;
+            }
             return _remainingCollectibles[color];
         }
 
