@@ -32,8 +32,8 @@ namespace ScientificGameJam.Menu
                 case "Credits": _credits.SetActive(value); break;
                 case "Controls": _controls.SetActive(value); break;
 
-                case "english": Translate.Instance.CurrentLanguage = "english"; break;
-                case "french": Translate.Instance.CurrentLanguage = "french"; break;
+                case "english": if (value) Translate.Instance.CurrentLanguage = "english"; break;
+                case "french": if (value) Translate.Instance.CurrentLanguage = "french"; break;
 
                 default: throw new NotImplementedException();
             }
