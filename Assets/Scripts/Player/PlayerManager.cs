@@ -36,6 +36,9 @@ namespace ScientificGameJam.Player
         [SerializeField]
         private GameObject _separator;
 
+        [SerializeField]
+        private GameObject _victory, _gameover;
+
         private readonly List<PlayerSpawn> _spawns = new();
 
         private Dictionary<ColorType, int> _remainingCollectibles = new();
@@ -81,6 +84,8 @@ namespace ScientificGameJam.Player
             get => _isReady;
         }
 
+        public bool DidGameEnded { private set; get; }
+
         private void Awake()
         {
             Instance = this;
@@ -105,8 +110,15 @@ namespace ScientificGameJam.Player
         {
             if (_spawns.All(x => x.IsWinning) && _remainingCollectibles.Values.All(x => x == 0))
             {
-                Debug.Log(Translate.Instance.Tr("winningText"));
+                DidGameEnded = true;
+                _victory.SetActive(true);
             }
+        }
+
+        public void GameOver()
+        {
+            DidGameEnded = true;
+            _gameover.SetActive(true);
         }
 
         public void OnPlayerJoin(PlayerInput player)

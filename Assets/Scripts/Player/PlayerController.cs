@@ -75,8 +75,7 @@ namespace ScientificGameJam.Player
 
         private void FixedUpdate()
         {
-            if (PlayerManager.Instance.IsReady)
-
+            if (PlayerManager.Instance.IsReady && !PlayerManager.Instance.DidGameEnded)
             {
                 // Debug.Log($"Dot product value {Vector2.Dot(_prevMov, _mov)}");
                 if (Vector2.Dot(_prevMov, _mov) < Info.DeviationLimit) // condition on loosing booster
@@ -89,6 +88,10 @@ namespace ScientificGameJam.Player
                 _prevMov = _mov;
                 _rb.velocity = Info.Speed * Time.fixedDeltaTime * _mov * (_boostTimer >= Info.TimeBeforeBoost ? Info.Booster * ( 1f+ Info.BoostCurve.Evaluate(Time.fixedDeltaTime)) : 1f);
                 // Debug.Log($"Velocity {_rb.velocity.magnitude}");
+            }
+            else
+            {
+                _rb.velocity = Vector2.zero;
             }
         }
 
