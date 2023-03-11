@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e59da8e849da6fa4f98fc2a0149a8037
+guid: 7db474f8f6fa799439e15ceeebc19c0d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,7 +105,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PlateformeV3 1_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 208
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2546b723717fbb34a96642b53e02ae34
+      internalID: -47110076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlateformeV3 1_1
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 209
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63aa8e295c256984da2e3e0ac8c75776
+      internalID: -1568061850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlateformeV3 1_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 48
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0033cfc78d12e8843981348f4580298e
+      internalID: 923967931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlateformeV3 1_3
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 47
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec5546dd0c19634fbd1ac5651d46832
+      internalID: 1665063360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -116,7 +200,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PlateformeV3 1_0: -47110076
+      PlateformeV3 1_1: -1568061850
+      PlateformeV3 1_2: 923967931
+      PlateformeV3 1_3: 1665063360
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
