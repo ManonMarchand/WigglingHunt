@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -12,12 +13,9 @@ namespace ScientificGameJam.Player
         public static PlayerManager Instance { get; private set; }
 
         [SerializeField]
-        private Transform[] _spawnPoint;
-
-        [SerializeField]
         private TMP_Text _waitingPlayerText;
 
-        private PlayerSpawn[] _spawns;
+        private readonly List<PlayerSpawn> _spawns = new();
 
         private bool _isReady;
         public bool IsReady
@@ -33,7 +31,11 @@ namespace ScientificGameJam.Player
         private void Awake()
         {
             Instance = this;
-            _spawns = _spawnPoint.Select(x => new PlayerSpawn(x)).ToArray();
+        }
+
+        public void RegisterSpawn(Transform spawn)
+        {
+            _spawns.Add(new(spawn));
         }
 
         public PlayerInput GetNextPlayer(PlayerInput player)
@@ -43,7 +45,7 @@ namespace ScientificGameJam.Player
 
         public void OnPlayerJoin(PlayerInput player)
         {
-            var freeSpot = Array.IndexOf(_spawns, _spawns.FirstOrDefault(x => x.Player == null));
+            var freeSpot = _spawns.IndexOf(_spawns.FirstOrDefault(x => x.Player == null));
             if (freeSpot == -1)
             {
                 Debug.LogWarning("No spot found for the new input device!");
@@ -62,7 +64,7 @@ namespace ScientificGameJam.Player
 
         public void OnPlayerLeave(PlayerInput player)
         {
-            var freeSpot = Array.IndexOf(_spawns, _spawns.FirstOrDefault(x => x.DoesContainsPlayer(player)));
+            var freeSpot = _spawns.IndexOf(_spawns.FirstOrDefault(x => x.DoesContainsPlayer(player)));
             Assert.AreNotEqual(-1, freeSpot);
             _spawns[freeSpot].Player = null;
             IsReady = false;
