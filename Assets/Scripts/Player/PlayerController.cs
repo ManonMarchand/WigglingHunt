@@ -15,7 +15,7 @@ namespace ScientificGameJam.Player
         private Vector2 _prevMov;
         private float _boostTimer;
 
-        public ColorType Color { set; get; }
+        public ColorType Color => Info.Color;
 
         private void Awake()
         {
