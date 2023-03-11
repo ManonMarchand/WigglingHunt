@@ -65,6 +65,7 @@ namespace ScientificGameJam.Translation
                 _currentLanguage = value;
                 foreach (var tt in UnityEngine.Object.FindObjectsOfType<TMP_TextTranslate>())
                 {
+                    Debug.Log(tt.name);
                     tt.UpdateText();
                 }
             }

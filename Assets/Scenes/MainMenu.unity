@@ -123,23 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &25281668 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8045118304051015536, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
-  m_PrefabInstance: {fileID: 1452247640246826222}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &25281672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25281668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d5d2391f3f37b1438a9731666333d76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &91715410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160,6 +143,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
+    - target: {fileID: 1525276561541107315, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1629683811370192450, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -216,7 +203,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1525276561541107315, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1180,6 +1168,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
+    - target: {fileID: 1525276561541107315, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1629683811370192450, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1236,7 +1228,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1525276561541107315, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -2359,14 +2352,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1534612513}
     m_Modifications:
-    - target: {fileID: 1500461749020253960, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
-    - target: {fileID: 1500461749020253960, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
     - target: {fileID: 1629683811370192450, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2415,17 +2400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Credits
       objectReference: {fileID: 0}
-    - target: {fileID: 8112313085931980552, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 598123768860664121, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8045118304051015536, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 25281672}
     - targetCorrespondingSourceObject: {fileID: 8045118304051015536, guid: ab16a666e5086d24c88d8802bc25a2a9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
