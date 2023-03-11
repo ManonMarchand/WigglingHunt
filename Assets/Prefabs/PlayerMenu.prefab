@@ -316,7 +316,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TODO: Write stuffs here'
+  m_text: "Manon Marchand\nManon Schaerer\nC\xE9lia Simeoni\nDeep Sekhar Biswas\nChristian
+    Chaux"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09feea15689de0d4d862db3d77ae093f, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
