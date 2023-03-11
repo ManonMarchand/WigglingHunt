@@ -20,7 +20,7 @@ namespace ScientificGameJam.Player
         // Internal timer to calculate boost
         private float _boostTimer;
 
-        private float _aimAngle;
+        private Vector2 _aimDir;
 
         public ColorType Color => Info.Color;
 
@@ -77,17 +77,14 @@ namespace ScientificGameJam.Player
             if (_input.currentControlScheme == "Keyboard&Mouse")
             {
                 v2 = _cam.ScreenToWorldPoint(v2);
-                float angleRad = Mathf.Atan2(v2.y - transform.position.y, v2.x - transform.position.x);
-                float angle = 180f / Mathf.PI * angleRad;
-                _aimAngle = angle;
+                _aimDir = new(v2.x - transform.position.x, v2.y - transform.position.y);
             }
             else
             {
                 if (v2 != Vector2.zero)
                 {
-                    Vector3 forward = new(v2.x, 0f, v2.y);
-                    var rot = Quaternion.LookRotation(forward, Vector3.up);
-                    _aimAngle = rot.eulerAngles.y;
+                    _aimDir = new(v2.x, v2.y);
+                    Debug.Log(_aimDir);
                 }
             }
         }
@@ -96,13 +93,18 @@ namespace ScientificGameJam.Player
         {
             if (value.performed)
             {
+                var hit = Physics2D.Raycast(transform.position, _aimDir, float.PositiveInfinity, ~(1 << 6));
+                if (hit.collider != null)
+                {
+                    Debug.Log(hit.collider.name);
+                }
             }
         }
 
         public void OnDrawGizmos()
         {
             Gizmos.color = UnityEngine.Color.blue;
-            Gizmos.DrawLine(transform.position, (Vector2)(Quaternion.Euler(0, 0, _aimAngle) * Vector2.right) * 20f);
+            Gizmos.DrawRay(new(transform.position, _aimDir));
         }
     }
 }

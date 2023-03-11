@@ -20,5 +20,7 @@ namespace ScientificGameJam.SO
         public ColorType Color;
 
         public bool CanShoot;
+
+        public GameObject Projectile;
     }
 }

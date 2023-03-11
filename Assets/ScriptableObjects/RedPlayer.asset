@@ -43,3 +43,5 @@ MonoBehaviour:
   BoostDuration: 2
   MaxBoostSpeed: 24
   Color: 0
+  CanShoot: 0
+  Projectile: {fileID: 1706301161558798430, guid: 32193d80df26552499615ef0959523a4, type: 3}
