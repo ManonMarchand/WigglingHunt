@@ -1,7 +1,6 @@
 using ScientificGameJam.SFX;
 using ScientificGameJam.SO;
 using ScientificGameJam.Translation;
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -66,7 +65,7 @@ namespace ScientificGameJam.Player
             _input = GetComponent<PlayerInput>();
             _cam = GetComponentInChildren<Camera>();
             _lr = GetComponentInChildren<LineRenderer>();
-            _sr = GetComponent<SpriteRenderer>();
+            _sr = GetComponentInChildren<SpriteRenderer>();
             _lr.gameObject.SetActive(false);
 
             _ignoreMask = (1 << LayerMask.NameToLayer("Player"));
