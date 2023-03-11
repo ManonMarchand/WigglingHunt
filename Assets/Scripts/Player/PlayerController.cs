@@ -174,7 +174,8 @@ namespace ScientificGameJam.Player
                 var hit = Physics2D.Raycast(transform.position, _aimDir, float.PositiveInfinity, _ignoreMask);
                 if (hit.collider != null)
                 {
-                    SFXManager.Instance.LaserSFX.Play();
+                    if (SFXManager.Instance != null)
+                        SFXManager.Instance.LaserSFX.Play();
                     _shake = Info.ShakeTime;
                     _lr.gameObject.SetActive(true);
                     _lr.SetPositions(new[] { ConvertVector(transform.position), ConvertVector((Vector3)hit.point) });

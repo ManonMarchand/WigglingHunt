@@ -1,6 +1,7 @@
 {
     "play": "Play",
     "credits": "Credits",
+    "controls": "Controls",
 
     "gameover": "Game Over",
     "restart": "Restart",
@@ -17,5 +18,12 @@
     "lySoSome": "I want to digest everything, attention!!! Nano-Hunters I am coming!!!",
     "centroSome": "I divide and rule so I don't like outsiders!",
 
-    "dyeLeft": "Fluorophore left:"
+    "dyeLeft": "Fluorophore left:",
+
+    "controls1": "Move: WASD / Left Stick",
+    "controls2": "Teleport: X / Left Button",
+    "controls3": "Quick Restart: R",
+    "controls4": "For Green Player:",
+    "controls5": "Aim: Mouse / Right Stick",
+    "controls6": "Fire: Left Mouse / Right Trigger"
 }

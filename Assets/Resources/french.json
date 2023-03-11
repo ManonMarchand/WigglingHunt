@@ -1,6 +1,7 @@
 {
     "play": "Jouer",
     "credits": "Crédits",
+    "controls": "Contrôles",
 
     "gameover": "Partie fini",
     "restart": "Rééssayer",
@@ -17,5 +18,12 @@
     "lySoSome": "Je veux tout digérer, attention !!! Chasseurs de nanotechnologies, j'arrive !!!",
     "centroSome": "Je divise pour mieux régner, alors je n'aime pas les étrangers !",
 
-    "dyeLeft": "Fluorochrome restants :"
+    "dyeLeft": "Fluorochrome restants :",
+
+    "controls1": "Déplacements: WASD / Stick gauche",
+    "controls2": "Téléportation: X / Boutton gauche",
+    "controls3": "Redémarrage rapide: R",
+    "controls4": "Pour le joueur vert :",
+    "controls5": "Viser: Souris / Stick Droit",
+    "controls6": "Tirer: Clique gauche / Trigger Droit"
 }

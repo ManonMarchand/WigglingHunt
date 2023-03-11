@@ -7,7 +7,7 @@ namespace ScientificGameJam.Menu
     public class MenuDisplay : MonoBehaviour
     {
         [SerializeField]
-        private GameObject _credits;
+        private GameObject _credits, _controls;
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
@@ -30,6 +30,7 @@ namespace ScientificGameJam.Menu
             switch (tag)
             {
                 case "Credits": _credits.SetActive(value); break;
+                case "Controls": _controls.SetActive(value); break;
 
                 case "english": Translate.Instance.CurrentLanguage = "english"; break;
                 case "french": Translate.Instance.CurrentLanguage = "french"; break;
