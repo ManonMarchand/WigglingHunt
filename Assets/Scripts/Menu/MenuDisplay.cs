@@ -39,8 +39,8 @@ namespace ScientificGameJam.Menu
 
                 default:
                     _explanations.SetActive(value);
-                    _explanationsTitle.text = "";
-                    _explanationsContent.text = "";
+                    _explanationsTitle.text = Translate.Instance.Tr($"{value}Title");
+                    _explanationsContent.text = Translate.Instance.Tr($"{value}Description");
                     break;
             }
         }
