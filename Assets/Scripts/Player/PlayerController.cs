@@ -126,7 +126,7 @@ namespace ScientificGameJam.Player
         {
             if (SceneManager.GetActiveScene().name != "MainMenu")
             {
-                _dyeLeftText.text = $"{Translate.Instance.Tr("dyeLeft")} {PlayerManager.Instance.GetCollectibleLeft(Info.Color)}";
+                _dyeLeftText.text = $"{PlayerManager.Instance.GetCollectibleLeft(Info.Color)} {Translate.Instance.Tr("left")}";
             }
         }
 
