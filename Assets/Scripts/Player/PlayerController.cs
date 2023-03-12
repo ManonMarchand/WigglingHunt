@@ -196,9 +196,9 @@ namespace ScientificGameJam.Player
                     {
                         Destroy(hit.collider.gameObject);
                     }
-                    else if (hit.collider.TryGetComponent<Rigidbody2D>(out var comp))
+                    else if (hit.collider.attachedRigidbody != null)
                     {
-                        comp.AddForce(_aimDir.normalized * 10f, ForceMode2D.Impulse);
+                        hit.collider.attachedRigidbody.AddForce(_aimDir.normalized * 20f, ForceMode2D.Impulse);
                     }
                     _canShoot = false;
                     StartCoroutine(Reload());

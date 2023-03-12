@@ -7,6 +7,8 @@
     "restart": "Restart",
     "backToMenu": "Back to Menu",
 
+    "level": "Level",
+
     "waitingPlayers": "Waiting for all nano-hunters to connect...",
     "winningText": "Virus identified, mission accomplished!!", 
     "loosingByTouching": "Touching is illegal, you just collided",

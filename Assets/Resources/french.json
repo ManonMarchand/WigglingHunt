@@ -7,6 +7,8 @@
     "restart": "Rééssayer",
     "backToMenu": "Retour au menu",
 
+    "level": "Niveau",
+
     "waitingPlayers": "En attente de tous les nano-chasseurs...",
     "winningText": "Virus identifié, mission accomplie!!",
     "loosingByTouching": "Pas touche la mouche! Vous vous êtes effondrés",
