@@ -25,7 +25,7 @@ namespace ScientificGameJam.Level
         {
             if (collision.CompareTag("Player"))
             {
-                var spawn = PlayerManager.Instance.GetSpawn(collision.GetComponent<PlayerInput>());
+                var spawn = PlayerManager.Instance.GetSpawn(collision.attachedRigidbody.GetComponent<PlayerInput>());
                 if (spawn.Color == _targetColor)
                 {
                     spawn.IsWinning = false;
