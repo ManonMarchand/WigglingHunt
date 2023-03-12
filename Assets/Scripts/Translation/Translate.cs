@@ -10,7 +10,8 @@ namespace ScientificGameJam.Translation
         private readonly string[] _languages =
         {
             "english",
-            "french"
+            "french",
+            "bangli"
         };
 
         private Translate()

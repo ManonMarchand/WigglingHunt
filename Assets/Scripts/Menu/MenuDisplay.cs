@@ -36,6 +36,7 @@ namespace ScientificGameJam.Menu
 
                 case "english": if (value) Translate.Instance.CurrentLanguage = "english"; break;
                 case "french": if (value) Translate.Instance.CurrentLanguage = "french"; break;
+                case "bangli": if (value) Translate.Instance.CurrentLanguage = "bangli"; break;
 
                 default:
                     _explanations.SetActive(value);

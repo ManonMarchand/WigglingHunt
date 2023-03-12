@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.09710693
       objectReference: {fileID: 0}
+    - target: {fileID: 4414241575296790000, guid: 6cdccff005bb9924a814d99f06d0d172, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4848031054041043229, guid: 6cdccff005bb9924a814d99f06d0d172, type: 3}
       propertyPath: m_Color.b
       value: 0.10989809
