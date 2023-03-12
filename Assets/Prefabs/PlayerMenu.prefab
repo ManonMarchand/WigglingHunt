@@ -910,6 +910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 8131546771628858951, guid: fa27010f179acc147a53f1d9b27770d9, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8323679966974603301, guid: fa27010f179acc147a53f1d9b27770d9, type: 3}
