@@ -34,5 +34,7 @@
     "controls3": "Redémarrage rapide: R",
     "controls4": "Pour le joueur vert :",
     "controls5": "Viser: Souris / Stick Droit",
-    "controls6": "Tirer: Clique gauche / Trigger Droit"
+    "controls6": "Tirer: Clique gauche / Trigger Droit",
+
+    "sampleTextControl": "Le dernier à toucher la vésicule choisit la langue"
 }
