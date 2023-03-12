@@ -1321,8 +1321,8 @@ MonoBehaviour:
   _credits: {fileID: 2659001279389047171}
   _controls: {fileID: 3097647022148428884}
   _explanations: {fileID: 6678326888557670874}
-  _explanationsTitle: {fileID: 3190232085678474912}
-  _explanationsContent: {fileID: 4967218608999953155}
+  _explanationsTitle: {fileID: 1274258790815506965}
+  _explanationsContent: {fileID: 2194447299095473187}
 --- !u!4 &5112138352934222222 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2814070367735168696, guid: fa27010f179acc147a53f1d9b27770d9, type: 3}
