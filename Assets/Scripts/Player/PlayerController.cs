@@ -78,7 +78,8 @@ namespace ScientificGameJam.Player
 
         private void Start()
         {
-            _dyeLeftImage.color = PlayerManager.ToColor(Info.Color);
+            if (_dyeLeftImage != null)
+                _dyeLeftImage.color = PlayerManager.ToColor(Info.Color);
 
             _ignoreMask = (1 << gameObject.layer);
             _ignoreMask |= (1 << LayerMask.NameToLayer("Collectible"));
