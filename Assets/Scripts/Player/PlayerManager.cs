@@ -20,8 +20,8 @@ namespace ScientificGameJam.Player
         {
             return type switch
             {
-                ColorType.RED => Color.red,
-                ColorType.GREEN => Color.green,
+                ColorType.GREEN => new Color(156f / 255f, 192f / 255f, 156f / 255f),
+                ColorType.RED => new Color(199f / 255f, 154f / 255f, 149f / 255f),
                 _ => throw new NotImplementedException()
             };
         }

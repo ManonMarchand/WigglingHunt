@@ -1,11 +1,11 @@
 using ScientificGameJam.SFX;
 using ScientificGameJam.SO;
-using ScientificGameJam.Translation;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace ScientificGameJam.Player
 {
@@ -15,6 +15,9 @@ namespace ScientificGameJam.Player
 
         [SerializeField]
         private TMP_Text _dyeLeftText;
+
+        [SerializeField]
+        private Image _dyeLeftImage;
 
         private Rigidbody2D _rb;
         private PlayerInput _input;
@@ -75,6 +78,8 @@ namespace ScientificGameJam.Player
 
         private void Start()
         {
+            _dyeLeftImage.color = PlayerManager.ToColor(Info.Color);
+
             _ignoreMask = (1 << gameObject.layer);
             _ignoreMask |= (1 << LayerMask.NameToLayer("Collectible"));
             _ignoreMask = ~_ignoreMask;
@@ -135,7 +140,7 @@ namespace ScientificGameJam.Player
         {
             if (SceneManager.GetActiveScene().name != "MainMenu")
             {
-                _dyeLeftText.text = $"{PlayerManager.Instance.GetCollectibleLeft(Info.Color)} {Translate.Instance.Tr("left")}";
+                _dyeLeftText.text = $"{PlayerManager.Instance.GetCollectibleLeft(Info.Color)}";
             }
         }
 
