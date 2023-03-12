@@ -11,7 +11,8 @@ namespace ScientificGameJam.Translation
         {
             "english",
             "french",
-            "bangli"
+            "bangli",
+            "hindi"
         };
 
         private Translate()
