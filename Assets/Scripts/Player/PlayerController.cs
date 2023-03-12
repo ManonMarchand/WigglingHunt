@@ -19,6 +19,9 @@ namespace ScientificGameJam.Player
         [SerializeField]
         private Image _dyeLeftImage;
 
+        [SerializeField]
+        private GameObject _explosion;
+
         private Rigidbody2D _rb;
         private PlayerInput _input;
         private Camera _cam;
@@ -217,6 +220,7 @@ namespace ScientificGameJam.Player
                     if (target.CompareTag("Destructible"))
                     {
                         Destroy(target.gameObject);
+                        Destroy(Instantiate(_explosion, hit.point, Quaternion.identity), .7f);
                     }
                     else if (hit.collider.attachedRigidbody != null)
                     {
