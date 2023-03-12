@@ -1,6 +1,5 @@
 ﻿using ScientificGameJam.SFX;
 using ScientificGameJam.SO;
-using ScientificGameJam.Translation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +15,8 @@ namespace ScientificGameJam.Player
         [SerializeField]
         private PlayerInfo[] _infos;
 
+        private float _timeRef;
+
         public static Color ToColor(ColorType type)
         {
             return type switch
@@ -29,7 +30,7 @@ namespace ScientificGameJam.Player
         public static PlayerManager Instance { get; private set; }
 
         [SerializeField]
-        private TMP_Text _waitingPlayerText;
+        private TMP_Text _waitingPlayerText, _timerText;
 
         [SerializeField]
         private Camera _waitingCamera;
@@ -122,6 +123,7 @@ namespace ScientificGameJam.Player
         {
             if (_spawns.All(x => x.IsWinning) && _remainingCollectibles.Values.All(x => x == 0))
             {
+                _timerText.text = $"{Time:0.00}";
                 SFXManager.Instance.WinningSFX.Play();
                 DidGameEnded = true;
                 _victory.SetActive(true);
@@ -138,6 +140,8 @@ namespace ScientificGameJam.Player
                 _reasonTouching.SetActive(true);
             }
         }
+
+        private float Time => UnityEngine.Time.unscaledTime - _timeRef;
 
         public void OnPlayerJoin(PlayerInput player)
         {
@@ -165,6 +169,7 @@ namespace ScientificGameJam.Player
                 if (_spawns.All(x => x.Player != null))
                 {
                     IsReady = true;
+                    _timeRef = UnityEngine.Time.unscaledTime;
                 }
             }
         }
