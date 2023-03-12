@@ -1,4 +1,5 @@
 ﻿using ScientificGameJam.Player;
+using ScientificGameJam.SFX;
 using UnityEngine;
 
 namespace ScientificGameJam.Level
@@ -21,6 +22,8 @@ namespace ScientificGameJam.Level
             {
                 _registered = true;
                 PlayerManager.Instance.Collect(_color);
+                if (SFXManager.Instance != null)
+                    SFXManager.Instance.EatingSFX.Play();
                 Destroy(gameObject);
             }
         }

@@ -151,6 +151,8 @@ namespace ScientificGameJam.Player
                 if (next != null) // Might happens if the others players aren't instanciated yet
                 {
                     (next.transform.position, transform.position) = (transform.position, next.transform.position);
+                    if (SFXManager.Instance != null)
+                        SFXManager.Instance.TeleportSFX.Play();
                 }
             }
         }
