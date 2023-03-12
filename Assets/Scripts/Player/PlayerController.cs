@@ -98,6 +98,15 @@ namespace ScientificGameJam.Player
 
                 _prevMov = _mov;
                 _rb.velocity = Info.Speed * Time.fixedDeltaTime * _mov * (_boostTimer >= Info.TimeBeforeBoost ? Info.Booster * ( 1f+ Info.BoostCurve.Evaluate(Time.fixedDeltaTime)) : 1f);
+
+                if (_rb.velocity.x < 0f)
+                {
+                    _sr.flipX = true;
+                }
+                else if (_rb.velocity.x > 0f)
+                {
+                    _sr.flipX = false;
+                }
             }
         }
 
