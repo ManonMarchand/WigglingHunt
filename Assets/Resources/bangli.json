@@ -29,6 +29,9 @@
     "quenchersTitle": "শমনকারী",
     "quenchersTouch":"এখন আলো খাব।",
     "left": "এখনও বাকি",
+    "foodnNotFinished": "দুঃখিত! আপনি যথেষ্ট উজ্জ্বল নন।",
+    "foodFinished": "আপনি এখন উজ্জ্বল, তাই যান এবং DNA ধরুন",
+
 
     "controls1": "Move: WASD / Left Stick",
     "controls2": "Teleport: X / Left Button",
