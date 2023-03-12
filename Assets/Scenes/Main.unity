@@ -1020,6 +1020,7 @@ MonoBehaviour:
   LoosingSFX: {fileID: 996605432}
   TeleportSFX: {fileID: 751398569}
   EatingSFX: {fileID: 2034498021}
+  BGM: {fileID: 1352566090}
 --- !u!1 &751398567
 GameObject:
   m_ObjectHideFlags: 0
