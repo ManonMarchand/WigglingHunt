@@ -1,3 +1,31 @@
 {
-    "waitingPlayers": "En attente de tous les nano-chasseurs..."
+    "play": "Jouer",
+    "credits": "Crédits",
+    "controls": "Contrôles",
+
+    "gameover": "Partie fini",
+    "restart": "Rééssayer",
+    "backToMenu": "Retour au menu",
+
+    "level": "Niveau",
+
+    "waitingPlayers": "En attente de tous les nano-chasseurs...",
+    "winningText": "Virus identifié, mission accomplie!!",
+    "loosingByTouching": "Pas touche la mouche! Vous vous êtes effondrés",
+    "welcomeInGame": "Un ensemble de cellules vient d'être infecté par un virus. Cette situation requiert deux brillants nano-chasseurs!",
+    "winningLevel0": "L'union fait la force, ce virus est identifié! ☺",
+    "whatAmI": "Je suis un nano-chasseur et mes bras spaguettis sont des brins d'ADN spécialement conçus pour détecter l'ADN du virus qui infecte cette cellule. Allons l'attraper !",
+    "mitochondria": "Un gentil organe respiratoire, plutôt inoffensif…",
+    "dyeExplanation": "Le carburant qui fait briller les nanos-chasseurs!",
+    "lySoSome": "Je veux tout digérer, attention !!! Chasseurs de nanotechnologies, j'arrive !!!",
+    "centroSome": "Je divise pour mieux régner, alors je n'aime pas les étrangers !",
+
+    "left": "restants",
+
+    "controls1": "Déplacements: WASD / Stick gauche",
+    "controls2": "Téléportation: X / Boutton gauche",
+    "controls3": "Redémarrage rapide: R",
+    "controls4": "Pour le joueur vert :",
+    "controls5": "Viser: Souris / Stick Droit",
+    "controls6": "Tirer: Clique gauche / Trigger Droit"
 }

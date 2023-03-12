@@ -1,3 +1,31 @@
 {
-    "waitingPlayers": "Waiting for all nano-hunters to connect..."
+    "play": "Play",
+    "credits": "Credits",
+    "controls": "Controls",
+
+    "gameover": "Game Over",
+    "restart": "Restart",
+    "backToMenu": "Back to Menu",
+
+    "level": "Level",
+
+    "waitingPlayers": "Waiting for all nano-hunters to connect...",
+    "winningText": "Virus identified, mission accomplished!!", 
+    "loosingByTouching": "Touching is illegal, you just collided",
+    "welcomeInGame": "Some cells have been infected by a virus, we're in need of two bright nano-hunters",
+    "winningLevel0": "Together we shine and the virus is identifed! ☺",
+    "whatAmI": "I am a nano-hunter, my wiggling arms are DNA strands designed to hunt the one of a specific virus! Let's go and grab that!",
+    "mitochondria": "A cute respiratory organ, quite innofensive…",
+    "dyeExplanation": "Nano-hunters brightness fuel!",
+    "lySoSome": "I want to digest everything, attention!!! Nano-Hunters I am coming!!!",
+    "centroSome": "I divide and rule so I don't like outsiders!",
+
+    "left": "left",
+
+    "controls1": "Move: WASD / Left Stick",
+    "controls2": "Teleport: X / Left Button",
+    "controls3": "Quick Restart: R",
+    "controls4": "For Green Player:",
+    "controls5": "Aim: Mouse / Right Stick",
+    "controls6": "Fire: Left Mouse / Right Trigger"
 }

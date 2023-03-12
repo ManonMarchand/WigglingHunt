@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - InfoPanel
+  - Destructible
   layers:
   - Default
   - TransparentFX
@@ -11,10 +13,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
-  - 
-  - 
-  - 
+  - RedPlayer
+  - Collectible
+  - GreenPlayer
+  - Enemy
   - 
   - 
   - 
@@ -38,6 +40,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2141408021
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Mitochondrias
+    uniqueID: 4155774613
+    locked: 0
+  - name: Player
+    uniqueID: 1296439689
+    locked: 0
+  - name: UI
+    uniqueID: 810116113
     locked: 0
