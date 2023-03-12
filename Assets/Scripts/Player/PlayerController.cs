@@ -158,6 +158,10 @@ namespace ScientificGameJam.Player
         public void OnAim(InputAction.CallbackContext value)
         {
             var v2 = value.ReadValue<Vector2>();
+            if (_input.currentControlScheme == null)
+            {
+                return;
+            }
             if (_input.currentControlScheme == "Keyboard&Mouse")
             {
                 v2 = _cam.ScreenToWorldPoint(v2);
