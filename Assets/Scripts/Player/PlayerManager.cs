@@ -123,7 +123,7 @@ namespace ScientificGameJam.Player
         {
             if (_spawns.All(x => x.IsWinning) && _remainingCollectibles.Values.All(x => x == 0))
             {
-                _timerText.text = $"{Time:0.00}";
+                _timerText.text = $"{Time:0.00}s";
                 SFXManager.Instance.BGM.Stop();
                 SFXManager.Instance.WinningSFX.Play();
                 DidGameEnded = true;
