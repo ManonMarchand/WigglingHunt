@@ -680,6 +680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dyeLeftText: {fileID: 2647086955686648802}
   _dyeLeftImage: {fileID: 1906503090306963286}
+  _explosion: {fileID: 55736016799141092, guid: 0bd7dc7e2332adc46a1360c98c98568f, type: 3}
 --- !u!114 &3402932208306374638
 MonoBehaviour:
   m_ObjectHideFlags: 0
