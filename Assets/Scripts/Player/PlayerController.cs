@@ -198,9 +198,10 @@ namespace ScientificGameJam.Player
                     {
                         hit.collider.GetComponent<PlayerController>().Stun();
                     }
-                    if (hit.collider.attachedRigidbody.CompareTag("Destructible"))
+                    var target = hit.collider.attachedRigidbody == null ? hit.collider.gameObject : hit.collider.attachedRigidbody.gameObject;
+                    if (target.CompareTag("Destructible"))
                     {
-                        Destroy(hit.collider.attachedRigidbody.gameObject);
+                        Destroy(target.gameObject);
                     }
                     else if (hit.collider.attachedRigidbody != null)
                     {
