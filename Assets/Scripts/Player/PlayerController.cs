@@ -175,7 +175,7 @@ namespace ScientificGameJam.Player
         public void OnAim(InputAction.CallbackContext value)
         {
             var v2 = value.ReadValue<Vector2>();
-            if (_input.currentControlScheme == null)
+            if (_input == null)
             {
                 return;
             }
@@ -211,7 +211,7 @@ namespace ScientificGameJam.Player
                     _laserTimer = .3f;
                     if (hit.collider.CompareTag("Player"))
                     {
-                        hit.collider.GetComponent<PlayerController>().Stun();
+                        hit.collider.attachedRigidbody.GetComponent<PlayerController>().Stun();
                     }
                     var target = hit.collider.attachedRigidbody == null ? hit.collider.gameObject : hit.collider.attachedRigidbody.gameObject;
                     if (target.CompareTag("Destructible"))
