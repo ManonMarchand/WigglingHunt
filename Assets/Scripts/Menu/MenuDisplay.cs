@@ -1,5 +1,5 @@
 ﻿using ScientificGameJam.Translation;
-using System;
+using TMPro;
 using UnityEngine;
 
 namespace ScientificGameJam.Menu
@@ -7,7 +7,9 @@ namespace ScientificGameJam.Menu
     public class MenuDisplay : MonoBehaviour
     {
         [SerializeField]
-        private GameObject _credits, _controls;
+        private GameObject _credits, _controls, _explanations;
+        [SerializeField]
+        private TMP_Text _explanationsTitle, _explanationsContent;
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
@@ -35,7 +37,11 @@ namespace ScientificGameJam.Menu
                 case "english": if (value) Translate.Instance.CurrentLanguage = "english"; break;
                 case "french": if (value) Translate.Instance.CurrentLanguage = "french"; break;
 
-                default: throw new NotImplementedException();
+                default:
+                    _explanations.SetActive(value);
+                    _explanationsTitle.text = "";
+                    _explanationsContent.text = "";
+                    break;
             }
         }
     }
