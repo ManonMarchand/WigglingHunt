@@ -22,10 +22,12 @@
     "dyeTitle": "আনবিক উজ্জ্বল কণা",
     "lySoSomeDescription": "আমি সবকিছুই হজম করতে সক্ষম, তাই আনবিক শিকারীরা সাবধান।",
     "lySoSomeTitle": "লাইসোসোম",
+    "centroSomeTouch": "হ্যাঁ, আমি তোমাকে পেয়েছি!!",
     "centroSomeDescription": "আমি অচেনা ব্যক্তি একদমই পচ্ছন্দ করি না।",
     "centroSomeTitle": "সেন্ট্রোসোম",
     "quenchersDescription": "আমি আলো পছন্দ করি না, আমি আলো খাই। পারলে পালাও! হা! হা! হা!",
     "quenchersTitle": "শমনকারী",
+    "quenchersTouch":"এখন আলো খাব।"
     "left": "এখনও বাকি",
 
     "controls1": "Move: WASD / Left Stick",
