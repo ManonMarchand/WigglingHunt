@@ -1,0 +1,38 @@
+{
+    "play": "गेम शुरू करें",
+    "credits": "क्रेडिट",
+    "controls": "नियंत्रण",
+
+    "gameover": "गेम ओवर",
+    "restart": "पुनरारंभ करें",
+    "backToMenu": "मेनू पर वापस",
+
+    "level": "स्तर",
+
+    "waitingPlayers": "सभी नैनो-शिकारियों के जुड़ने की प्रतीक्षा कर रहा है ...",
+    "winningText": "वायरस की पहचान हुई, मिशन पूरा हुआ!!", 
+    "loosingByTouching": "छूना गैर-कानूनी है, आप अभी-अभी टकराए हैं",
+    "welcomeInGame": "कुछ कोशिकाएं एक वायरस से संक्रमित हो गई हैं, हमें दो उज्ज्वल नैनो-शिकारियों की आवश्यकता है",
+    "winningLevel0": "एक साथ हम चमकते हैं और वायरस की पहचान होती है! ☺",
+    "nanoparticlesDescription": "मैं एक नैनो-शिकारी हूं, मेरे लड़खड़ाते हाथ डीएनए स्ट्रैंड्स हैं जिन्हें एक विशिष्ट वायरस का शिकार करने के लिए डिज़ाइन किया गया है! चलो चलें और इसे पकड़ें!",
+    "nanoparticlesTitle": "नैनो-कण",
+    "mitochondriaDescription": "एक प्यारा श्वसन अंग, बिल्कुल हानिरहित ...",
+    "mitochondriaTitle": "माइटोकॉन्ड्रिया",
+    "dyeDescription": "तुम्हें पता है कि मैं आणविक शिकारियों के भोजन के रूप में जाना जाता हूं।",
+    "dyeTitle": "प्रतिदीप्ति रंजक",
+    "lySoSomeDescription": "मैं सब कुछ पचा सकता हूं, इसलिए आणविक शिकारी सावधान रहें।",
+    "lySoSomeTitle": "लाइसोसोम",
+    "centroSomeDescription": "मैं बाँटता हूँ और शासन करता हूँ इसलिए मुझे बाहरी लोग पसंद नहीं हैं!",
+    "centroSomeTitle": "सेंट्रोसोम",
+    "quenchersDescription": "मुझे रोशनी पसंद नहीं है, मैं इसे खाता हूं और मुझे यह पसंद है। यदि आप कर सकते हैं तो भाग जाएं! हा! हा! हा!",
+    "quenchersTitle": "शमन करने वाले",
+
+    "left": "बाकी हैं",
+
+    "controls1": "Move: WASD / Left Stick",
+    "controls2": "Teleport: X / Left Button",
+    "controls3": "Quick Restart: R",
+    "controls4": "For Green Player:",
+    "controls5": "Aim: Mouse / Right Stick",
+    "controls6": "Fire: Left Mouse / Right Trigger"
+}
