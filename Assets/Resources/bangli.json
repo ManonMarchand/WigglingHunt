@@ -1,0 +1,30 @@
+{
+    "play": "চলো শুরু করা যাক..",
+    "credits": "উপস্থাপনায়..",
+    "controls": "নিয়ন্ত্রণ করার জন্য়",
+
+    "gameover": "দুঃখিত খেলা শেষ",
+    "restart": "পুনরায় শুরু করার জন্য়",
+    "backToMenu": "Back to Menu",
+
+    "level": "Level",
+
+    "waitingPlayers": "সকলের জন্য একটুখানি অপেক্ষা করি???",
+    "winningText": "ভাইরাসটি অবশেষে ধরা পরেছে, আমরা সফল।", 
+    "loosingByTouching": "স্পর্শ করা অপরাধ হিসেবে পরিচিত হয়।",
+    "welcomeInGame": "কিছু কোষ ভাইরাস দ্বারা প্রভাবিত হয়েছে, তাই আমাদের দুই জন উজ্জ্বল আনবিক শিকারী প্রয়োজন।",
+    "winningLevel0": "চলো একসাথে আমরা আবার ভাইরাসগুলো চিহ্নিত করি।",
+    "whatAmI": "আমি একজন আনবিক শিকারী,আমার নড়বড়ে হাতগুলো হল DNA যা একটি নির্দিষ্ট ভাইরাসকে শিকার করার জন্য ডিজাইন করা হয়েছে! চলুন আমরা একসাথে ওদের চিহ্নিত করি।",
+    "mitochondria": "আমি কোষের শ্বসনতন্ত্র, আমি কিন্তু সাতে - পাঁচে থাকি না।",
+    "dyeExplanation": "জানেন আমি আনবিক শিকারীদের খাদ্য হিসেবে পরিচিত।",
+    "lySoSome": "আমি সবকিছুই হজম করতে সক্ষম, তাই আনবিক শিকারীরা সাবধান।",
+    "centroSome": "আমি অচেনা ব্যক্তি একদমই পচ্ছন্দ করি না।",
+    "left": "left",
+
+    "controls1": "Move: WASD / Left Stick",
+    "controls2": "Teleport: X / Left Button",
+    "controls3": "Quick Restart: R",
+    "controls4": "For Green Player:",
+    "controls5": "Aim: Mouse / Right Stick",
+    "controls6": "Fire: Left Mouse / Right Trigger"
+}
