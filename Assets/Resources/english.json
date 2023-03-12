@@ -16,7 +16,7 @@
     "winningLevel0": "Together we shine and the virus is identifed! ☺",
     "nanoparticlesDescription": "I am a nano-hunter, my wiggling arms are DNA strands designed to hunt the one of a specific virus! Let's go and grab that!",
     "nanoparticlesTitle": "Nano-particles",
-    "mitochondriaDescription": "A cute respiratory organ, quite innofensive…",
+    "mitochondriaDescription": "A cute respiratory organ, quite inoffensive…",
     "mitochondriaTitle": "Mitochondria",
     "dyeDescription": "Nano-hunters brightness fuel!",
     "dyeTitle": "Fluorescent dyes",
@@ -38,5 +38,8 @@
     "controls3": "Quick Restart: R",
     "controls4": "For Green Player:",
     "controls5": "Aim: Mouse / Right Stick",
-    "controls6": "Fire: Left Mouse / Right Trigger"
+    "controls6": "Fire: Left Mouse / Right Trigger",
+
+
+    "sampleTextControl": "Last to walk on a vesicle choses the language"
 }

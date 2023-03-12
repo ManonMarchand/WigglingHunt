@@ -36,11 +36,13 @@ namespace ScientificGameJam.Menu
 
                 case "english": if (value) Translate.Instance.CurrentLanguage = "english"; break;
                 case "french": if (value) Translate.Instance.CurrentLanguage = "french"; break;
+                case "bangli": if (value) Translate.Instance.CurrentLanguage = "bangli"; break;
+                case "hindi": if (value) Translate.Instance.CurrentLanguage = "hindi"; break;
 
                 default:
                     _explanations.SetActive(value);
-                    _explanationsTitle.text = "";
-                    _explanationsContent.text = "";
+                    _explanationsTitle.text = Translate.Instance.Tr($"{tag}Title");
+                    _explanationsContent.text = Translate.Instance.Tr($"{tag}Description");
                     break;
             }
         }

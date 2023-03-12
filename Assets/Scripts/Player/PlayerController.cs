@@ -1,11 +1,11 @@
 using ScientificGameJam.SFX;
 using ScientificGameJam.SO;
-using ScientificGameJam.Translation;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace ScientificGameJam.Player
 {
@@ -15,6 +15,12 @@ namespace ScientificGameJam.Player
 
         [SerializeField]
         private TMP_Text _dyeLeftText;
+
+        [SerializeField]
+        private Image _dyeLeftImage;
+
+        [SerializeField]
+        private GameObject _explosion;
 
         private Rigidbody2D _rb;
         private PlayerInput _input;
@@ -75,6 +81,9 @@ namespace ScientificGameJam.Player
 
         private void Start()
         {
+            if (_dyeLeftImage != null)
+                _dyeLeftImage.color = PlayerManager.ToColor(Info.Color);
+
             _ignoreMask = (1 << gameObject.layer);
             _ignoreMask |= (1 << LayerMask.NameToLayer("Collectible"));
             _ignoreMask = ~_ignoreMask;
@@ -98,6 +107,15 @@ namespace ScientificGameJam.Player
 
                 _prevMov = _mov;
                 _rb.velocity = Info.Speed * Time.fixedDeltaTime * _mov * (_boostTimer >= Info.TimeBeforeBoost ? Info.Booster * ( 1f+ Info.BoostCurve.Evaluate(Time.fixedDeltaTime)) : 1f);
+
+                if (_rb.velocity.x < 0f)
+                {
+                    _sr.flipX = true;
+                }
+                else if (_rb.velocity.x > 0f)
+                {
+                    _sr.flipX = false;
+                }
             }
         }
 
@@ -126,7 +144,7 @@ namespace ScientificGameJam.Player
         {
             if (SceneManager.GetActiveScene().name != "MainMenu")
             {
-                _dyeLeftText.text = $"{PlayerManager.Instance.GetCollectibleLeft(Info.Color)} {Translate.Instance.Tr("left")}";
+                _dyeLeftText.text = $"{PlayerManager.Instance.GetCollectibleLeft(Info.Color)}";
             }
         }
 
@@ -151,6 +169,8 @@ namespace ScientificGameJam.Player
                 if (next != null) // Might happens if the others players aren't instanciated yet
                 {
                     (next.transform.position, transform.position) = (transform.position, next.transform.position);
+                    if (SFXManager.Instance != null)
+                        SFXManager.Instance.TeleportSFX.Play();
                 }
             }
         }
@@ -158,6 +178,10 @@ namespace ScientificGameJam.Player
         public void OnAim(InputAction.CallbackContext value)
         {
             var v2 = value.ReadValue<Vector2>();
+            if (_input == null)
+            {
+                return;
+            }
             if (_input.currentControlScheme == "Keyboard&Mouse")
             {
                 v2 = _cam.ScreenToWorldPoint(v2);
@@ -190,11 +214,13 @@ namespace ScientificGameJam.Player
                     _laserTimer = .3f;
                     if (hit.collider.CompareTag("Player"))
                     {
-                        hit.collider.GetComponent<PlayerController>().Stun();
+                        hit.collider.attachedRigidbody.GetComponent<PlayerController>().Stun();
                     }
-                    if (hit.collider.CompareTag("Destructible"))
+                    var target = hit.collider.attachedRigidbody == null ? hit.collider.gameObject : hit.collider.attachedRigidbody.gameObject;
+                    if (target.CompareTag("Destructible"))
                     {
-                        Destroy(hit.collider.gameObject);
+                        Destroy(target.gameObject);
+                        Destroy(Instantiate(_explosion, hit.point, Quaternion.identity), .7f);
                     }
                     else if (hit.collider.attachedRigidbody != null)
                     {

@@ -28,6 +28,6 @@ namespace ScientificGameJam.SO
 
         public float Scale;
 
-        public Sprite Sprite;
+        public RuntimeAnimatorController Anim;
     }
 }

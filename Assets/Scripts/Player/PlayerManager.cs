@@ -1,6 +1,5 @@
 ﻿using ScientificGameJam.SFX;
 using ScientificGameJam.SO;
-using ScientificGameJam.Translation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,12 +15,14 @@ namespace ScientificGameJam.Player
         [SerializeField]
         private PlayerInfo[] _infos;
 
+        private float _timeRef;
+
         public static Color ToColor(ColorType type)
         {
             return type switch
             {
-                ColorType.RED => Color.red,
-                ColorType.GREEN => Color.green,
+                ColorType.GREEN => new Color(156f / 255f, 192f / 255f, 156f / 255f),
+                ColorType.RED => new Color(199f / 255f, 154f / 255f, 149f / 255f),
                 _ => throw new NotImplementedException()
             };
         }
@@ -29,7 +30,7 @@ namespace ScientificGameJam.Player
         public static PlayerManager Instance { get; private set; }
 
         [SerializeField]
-        private TMP_Text _waitingPlayerText;
+        private TMP_Text _waitingPlayerText, _timerText;
 
         [SerializeField]
         private Camera _waitingCamera;
@@ -122,6 +123,8 @@ namespace ScientificGameJam.Player
         {
             if (_spawns.All(x => x.IsWinning) && _remainingCollectibles.Values.All(x => x == 0))
             {
+                _timerText.text = $"{Time:0.00}s";
+                SFXManager.Instance.BGM.Stop();
                 SFXManager.Instance.WinningSFX.Play();
                 DidGameEnded = true;
                 _victory.SetActive(true);
@@ -130,6 +133,7 @@ namespace ScientificGameJam.Player
 
         public void GameOver(bool didTouch)
         {
+            SFXManager.Instance.BGM.Stop();
             SFXManager.Instance.LoosingSFX.Play();
             DidGameEnded = true;
             _gameover.SetActive(true);
@@ -138,6 +142,8 @@ namespace ScientificGameJam.Player
                 _reasonTouching.SetActive(true);
             }
         }
+
+        private float Time => UnityEngine.Time.unscaledTime - _timeRef;
 
         public void OnPlayerJoin(PlayerInput player)
         {
@@ -154,7 +160,7 @@ namespace ScientificGameJam.Player
                 player.GetComponentInChildren<SpriteRenderer>().transform.localScale = new(_spawns[freeSpot].Info.Scale, _spawns[freeSpot].Info.Scale, 1f);
                 player.GetComponent<PlayerController>().Info = _spawns[freeSpot].Info;
                 player.GetComponent<Rigidbody2D>().mass = _spawns[freeSpot].Info.Mass;
-                player.GetComponentInChildren<SpriteRenderer>().sprite = _spawns[freeSpot].Info.Sprite;
+                player.GetComponentInChildren<Animator>().runtimeAnimatorController = _spawns[freeSpot].Info.Anim;
 
                 var layer = LayerMask.NameToLayer(_spawns[freeSpot].Info.Color == ColorType.RED ? "RedPlayer" : "GreenPlayer");
                 player.gameObject.layer = layer;
@@ -165,6 +171,7 @@ namespace ScientificGameJam.Player
                 if (_spawns.All(x => x.Player != null))
                 {
                     IsReady = true;
+                    _timeRef = UnityEngine.Time.unscaledTime;
                 }
             }
         }
