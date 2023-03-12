@@ -1,4 +1,5 @@
 ﻿using ScientificGameJam.Player;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace ScientificGameJam.SO
@@ -28,6 +29,6 @@ namespace ScientificGameJam.SO
 
         public float Scale;
 
-        public Sprite Sprite;
+        public AnimatorController Anim;
     }
 }

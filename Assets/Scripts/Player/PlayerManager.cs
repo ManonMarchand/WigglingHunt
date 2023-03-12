@@ -154,7 +154,7 @@ namespace ScientificGameJam.Player
                 player.GetComponentInChildren<SpriteRenderer>().transform.localScale = new(_spawns[freeSpot].Info.Scale, _spawns[freeSpot].Info.Scale, 1f);
                 player.GetComponent<PlayerController>().Info = _spawns[freeSpot].Info;
                 player.GetComponent<Rigidbody2D>().mass = _spawns[freeSpot].Info.Mass;
-                player.GetComponentInChildren<SpriteRenderer>().sprite = _spawns[freeSpot].Info.Sprite;
+                player.GetComponentInChildren<Animator>().runtimeAnimatorController = _spawns[freeSpot].Info.Anim;
 
                 var layer = LayerMask.NameToLayer(_spawns[freeSpot].Info.Color == ColorType.RED ? "RedPlayer" : "GreenPlayer");
                 player.gameObject.layer = layer;

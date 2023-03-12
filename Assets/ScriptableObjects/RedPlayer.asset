@@ -50,3 +50,4 @@ MonoBehaviour:
   LaserReloadTime: 0
   Scale: 0.75
   Sprite: {fileID: 21300000, guid: 7cd8c7284eeb43b41b5d1ac941905f4a, type: 3}
+  Anim: {fileID: 9100000, guid: e03b3bdacb2a2d34c992fa88ab89ac9a, type: 2}
