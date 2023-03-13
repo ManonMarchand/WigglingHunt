@@ -1,0 +1,11 @@
+repos:
+  # General pre-commits
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: detect-private-key
+        description: "Check accidental private keys in code"
+      - id: requirements-txt-fixer
+        description: "Sort requirements alphabetically"
+      - id: trailing-whitespace
+        description: "Remove trailing whitespaces"
