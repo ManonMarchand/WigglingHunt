@@ -148,6 +148,7 @@ namespace ScientificGameJam.Player
         public void OnPlayerJoin(PlayerInput player)
         {
             var freeSpot = _spawns.IndexOf(_spawns.FirstOrDefault(x => x.Player == null));
+            Debug.LogWarning($"OnPlayerJoin freespot: {freeSpot}");
             if (freeSpot == -1)
             {
                 Debug.LogWarning("No spot found for the new input device!");
@@ -179,14 +180,10 @@ namespace ScientificGameJam.Player
         public void OnPlayerLeave(PlayerInput player)
         {
             var freeSpot = _spawns.IndexOf(_spawns.FirstOrDefault(x => x.DoesContainsPlayer(player)));
+            Debug.LogWarning($"freespot: {freeSpot}");
             Assert.AreNotEqual(-1, freeSpot);
             _spawns[freeSpot].Player = null;
             IsReady = false;
-            _separator.SetActive(_spawns.Count(x => x.Player != null) > 1);
-            if (_spawns.All(x => x.Player == null))
-            {
-                _waitingCamera.gameObject.SetActive(true);
-            }
         }
     }
 }
